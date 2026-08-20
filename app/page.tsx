@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Check, CircleDollarSign, Heart, Repeat2, Search, Sparkles, Store } from "lucide-react";
+import BrandLogo from "@/components/brand-logo";
 
 const steps = [
   { number: "01", title: "Marca tus cromos", text: "Indica cuáles te faltan y cuáles tienes repetidos." },
@@ -10,7 +11,7 @@ const steps = [
 export default function LandingPage() {
   return <main className="landing-page overflow-hidden">
     <header className="relative z-30 mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
-      <Link href="/" className="flex items-center gap-2.5 text-xl font-black tracking-[-.04em]"><span className="brand-mark">CN</span><span>Cromo<span className="text-[#7fa800]">Nexo</span></span></Link>
+      <Link href="/" className="flex items-center gap-2.5 text-xl font-black tracking-[-.04em]"><BrandLogo/><span>Cromo<span className="text-[#7fa800]">Nexo</span></span></Link>
       <nav className="hidden items-center gap-8 text-sm font-bold text-[#53665a] md:flex"><a href="#como-funciona" className="transition hover:text-[#173d2a]">Cómo funciona</a><a href="#ventajas" className="transition hover:text-[#173d2a]">Ventajas</a><Link href="/login" className="transition hover:text-[#173d2a]">Iniciar sesión</Link></nav>
       <Link href="/login" className="rounded-full bg-[#173d2a] px-5 py-2.5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#235d41]">Entrar <span className="hidden sm:inline">en CromoNexo</span></Link>
     </header>

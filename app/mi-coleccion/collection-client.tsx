@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Album, ChevronDown, Grid2X2, List, Plus, Repeat2, Search, Store, UserRound } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import BrandLogo from "@/components/brand-logo";
 
 type Status = "wanted" | "duplicate" | null;
 export type Sticker = { id: string; code: string; name: string | null; section: string; category: string | null; status: Status; quantity?: number };
@@ -53,7 +54,7 @@ export default function CollectionClient({ initialStickers, userId, userEmail, c
   return <div className="min-h-screen bg-[#f5f2e9] pb-24 md:pb-8">
     <header className="border-b border-[#173d2a]/15 bg-[#f5f2e9]/95 px-4 py-4 backdrop-blur md:px-8">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <div className="flex items-center gap-2 text-xl font-black tracking-[-.04em]"><span className="grid h-9 w-9 rotate-[-5deg] place-items-center rounded-lg bg-[#c9f31d] text-[#164f35]">CN</span>CromoNexo</div>
+        <div className="flex items-center gap-2 text-xl font-black tracking-[-.04em]"><BrandLogo/>CromoNexo</div>
         <nav className="hidden items-center gap-7 text-sm font-semibold md:flex"><Link className="border-b-2 border-[#164f35] py-3" href="/mi-coleccion">Mi colección</Link><Link href="/mis-matches">Mis matches</Link><Link href="/mercado">Mercado</Link></nav>
         <Link href="/perfil" aria-label={`Abrir perfil de ${userEmail}`} title="Perfil" className="grid h-10 w-10 place-items-center rounded-full bg-[#164f35] text-white"><UserRound size={19}/></Link>
       </div>

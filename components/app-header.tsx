@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Album, Home, Repeat2, Store, UserRound } from "lucide-react";
+import BrandLogo from "@/components/brand-logo";
 
 const links = [
   { href: "/inicio", label: "Inicio", icon: Home },
@@ -12,7 +13,7 @@ export default function AppHeader({ active }: { active?: "home" | "collection" |
   const activeHref = active === "home" ? "/inicio" : active === "collection" ? "/mi-coleccion" : active === "matches" ? "/mis-matches" : active === "market" ? "/mercado" : "";
   return <>
     <header className="app-header"><div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-8">
-      <Link href="/mi-coleccion" className="flex items-center gap-2.5 text-xl font-black tracking-[-.04em]"><span className="brand-mark">CN</span><span>Cromo<span className="text-[#287051]">Nexo</span></span></Link>
+      <Link href="/mi-coleccion" className="flex items-center gap-2.5 text-xl font-black tracking-[-.04em]"><BrandLogo/><span>Cromo<span className="text-[#287051]">Nexo</span></span></Link>
       <nav className="hidden items-center gap-1 rounded-full border border-[#173d2a]/10 bg-white/75 p-1 shadow-sm md:flex">{links.map(({href,label,icon:Icon})=><Link key={href} href={href} className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition ${activeHref===href?"bg-[#173d2a] text-white":"text-[#53665a] hover:bg-[#edf1e9] hover:text-[#173d2a]"}`}><Icon size={16}/>{label}</Link>)}</nav>
       <Link href="/perfil" aria-label="Mi perfil" className={`grid h-10 w-10 place-items-center rounded-full transition ${active==="profile"?"bg-[#c9f31d] text-[#173d2a]":"bg-[#173d2a] text-white hover:bg-[#287051]"}`}><UserRound size={18}/></Link>
     </div></header>

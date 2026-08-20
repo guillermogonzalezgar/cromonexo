@@ -29,6 +29,8 @@ button { cursor: pointer; }
 
 .app-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid rgba(23,61,42,.1); background: rgba(245,242,233,.86); backdrop-filter: blur(18px); }
 .brand-mark { display: grid; height: 2.35rem; width: 2.35rem; place-items: center; border-radius: .75rem; background: #c9f31d; color: #164f35; font-size: .78rem; box-shadow: 0 5px 15px rgba(71,91,16,.18); transform: rotate(-5deg); }
+.brand-logo { position:relative; display:inline-block; height:2.35rem; width:2.9rem; flex:none; overflow:hidden; border-radius:.7rem; background:#f5f2e9; box-shadow:0 5px 15px rgba(71,91,16,.12); }
+.brand-logo img { object-fit:cover; transform:scale(1.35); }
 .mobile-nav { position: fixed; inset-inline: .5rem; bottom: max(.5rem, env(safe-area-inset-bottom)); z-index: 50; display: grid; grid-template-columns: repeat(5,1fr); border: 1px solid rgba(23,61,42,.13); border-radius: 1.25rem; background: rgba(255,255,255,.94); padding: .4rem; box-shadow: 0 14px 40px rgba(23,35,27,.18); backdrop-filter: blur(16px); }
 .mobile-nav a { display:flex; min-height: 3rem; flex-direction:column; align-items:center; justify-content:center; gap:.2rem; border-radius:.9rem; color:#7b887f; font-size:.62rem; font-weight:800; }
 .mobile-nav a svg { width:1.15rem; height:1.15rem; }
@@ -49,6 +51,7 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } .landing-card,.landing-phone { animation:none; } }
 @media (max-width: 389px) {
   .brand-mark { height: 2rem; width: 2rem; border-radius: .65rem; }
+  .brand-logo { height:2rem; width:2.5rem; }
   .mobile-nav a { font-size: .56rem; }
   .mobile-nav a svg { width: 1rem; height: 1rem; }
 }
