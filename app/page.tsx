@@ -1,0 +1,51 @@
+import Link from "next/link";
+import { ArrowRight, BadgeCheck, Check, CircleDollarSign, Heart, Repeat2, Search, Sparkles, Store } from "lucide-react";
+import WaitlistForm from "@/components/waitlist-form";
+
+const steps = [
+  { number: "01", title: "Marca tus cromos", text: "Indica cuáles te faltan y cuáles tienes repetidos." },
+  { number: "02", title: "Encuentra tu match", text: "Descubre quién tiene lo que buscas y necesita lo que tú tienes." },
+  { number: "03", title: "Cierra el trato", text: "Intercambia, compra o vende directamente con otros coleccionistas." },
+];
+
+export default function LandingPage() {
+  return <main className="landing-page overflow-hidden">
+    <header className="relative z-30 mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
+      <Link href="/" className="flex items-center gap-2.5 text-xl font-black tracking-[-.04em]"><span className="brand-mark">CN</span><span>Cromo<span className="text-[#7fa800]">Nexo</span></span></Link>
+      <nav className="hidden items-center gap-8 text-sm font-bold text-[#53665a] md:flex"><a href="#como-funciona" className="transition hover:text-[#173d2a]">Cómo funciona</a><a href="#ventajas" className="transition hover:text-[#173d2a]">Ventajas</a><Link href="/login" className="transition hover:text-[#173d2a]">Iniciar sesión</Link></nav>
+      <Link href="/login" className="rounded-full bg-[#173d2a] px-5 py-2.5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#235d41]">Entrar <span className="hidden sm:inline">en CromoNexo</span></Link>
+    </header>
+
+    <section className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-12 px-5 pb-20 pt-10 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:py-20">
+      <div className="landing-orb landing-orb-one" />
+      <div className="relative z-10">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#173d2a]/10 bg-white/70 px-3.5 py-2 text-xs font-black uppercase tracking-[.13em] text-[#287051] shadow-sm backdrop-blur"><Sparkles size={15} className="text-[#7fa800]" /> La comunidad de coleccionistas</div>
+        <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[.94] tracking-[-.065em] text-[#173d2a] sm:text-6xl lg:text-[5.4rem]">Completar tu colección empieza por <span className="text-[#8eb900]">conectar.</span></h1>
+        <p className="mt-7 max-w-xl text-lg leading-8 text-[#53665a]">Organiza tus faltantes y repetidos. Encuentra intercambios compatibles y compra o vende cromos con otros coleccionistas.</p>
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row"><Link href="/login" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-[#c9f31d] px-7 font-black text-[#173d2a] shadow-[0_14px_35px_rgba(128,160,16,.25)] transition hover:-translate-y-1 hover:bg-[#d6ff2b]">Crear mi colección <ArrowRight size={19} /></Link><a href="#como-funciona" className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-[#173d2a]/15 bg-white/70 px-7 font-black text-[#173d2a] transition hover:bg-white">Ver cómo funciona</a></div>
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-bold text-[#68786e]"><span className="flex items-center gap-2"><Check size={17} className="text-[#7fa800]" /> Gratis para empezar</span><span className="flex items-center gap-2"><Check size={17} className="text-[#7fa800]" /> Sin marcar todo el álbum</span></div>
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-[34rem] lg:ml-auto">
+        <div className="landing-card absolute -left-8 top-20 z-20 hidden w-48 rounded-2xl p-4 sm:block"><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-[#eff8c8] text-[#607800]"><Repeat2 size={20} /></span><div><p className="text-xs font-bold text-[#75837a]">Nuevo match</p><p className="font-black">8 compatibles</p></div></div></div>
+        <div className="landing-phone mx-auto rounded-[2.8rem] border-[9px] border-[#173d2a] bg-[#f7f5ed] p-4 shadow-[0_35px_80px_rgba(23,61,42,.28)]">
+          <div className="mx-auto mb-5 h-1.5 w-20 rounded-full bg-[#173d2a]/20" />
+          <div className="rounded-[2rem] bg-[#173d2a] p-5 text-white"><p className="text-xs font-bold text-[#c9f31d]">MI COLECCIÓN</p><p className="mt-2 text-3xl font-black tracking-[-.05em]">Cada cromo cuenta.</p><div className="mt-5 grid grid-cols-2 gap-3"><MiniStat icon={<Heart size={17} />} value="42" label="Me faltan" tone="coral" /><MiniStat icon={<Repeat2 size={17} />} value="27" label="Repetidos" tone="lime" /></div></div>
+          <div className="mt-4 rounded-2xl bg-white p-4 shadow-sm"><div className="flex items-center justify-between"><p className="font-black">Tus cromos</p><Search size={18} className="text-[#718078]" /></div><div className="mt-4 space-y-2"><StickerRow number="12" name="Jugador 12" wanted /><StickerRow number="47" name="Jugador 47" /><StickerRow number="83" name="Jugador 83" wanted /></div></div>
+        </div>
+        <div className="landing-card absolute -bottom-5 -right-3 z-20 w-52 rounded-2xl p-4 sm:-right-8"><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-[#fff0e9] text-[#d5532d]"><BadgeCheck size={20} /></span><div><p className="text-xs font-bold text-[#75837a]">Colección</p><p className="font-black">Más cerca ✓</p></div></div></div>
+      </div>
+    </section>
+
+    <section id="como-funciona" className="bg-[#173d2a] px-5 py-20 text-white md:px-8 md:py-28"><div className="mx-auto max-w-7xl"><p className="text-sm font-black uppercase tracking-[.2em] text-[#c9f31d]">Así de sencillo</p><div className="mt-4 flex flex-col justify-between gap-5 md:flex-row md:items-end"><h2 className="max-w-2xl text-4xl font-black tracking-[-.05em] sm:text-5xl">De tus repetidos a tu próximo cromo.</h2><p className="max-w-md leading-7 text-white/60">CromoNexo hace visible la compatibilidad entre coleccionistas para que tardes menos en encontrar un buen trato.</p></div><div className="mt-12 grid gap-4 md:grid-cols-3">{steps.map((step) => <article key={step.number} className="rounded-3xl border border-white/10 bg-white/[.06] p-6 transition hover:-translate-y-1 hover:bg-white/[.09]"><span className="text-sm font-black text-[#c9f31d]">{step.number}</span><h3 className="mt-10 text-2xl font-black">{step.title}</h3><p className="mt-3 leading-7 text-white/60">{step.text}</p></article>)}</div></div></section>
+
+    <section id="ventajas" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28"><div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><div><p className="text-sm font-black uppercase tracking-[.2em] text-[#287051]">Todo en un lugar</p><h2 className="mt-4 text-4xl font-black tracking-[-.05em] sm:text-5xl">Tu colección deja de ser una lista.</h2><p className="mt-5 max-w-md leading-7 text-[#617168]">Se convierte en una herramienta para encontrar oportunidades reales dentro de la comunidad.</p></div><div className="grid gap-4 sm:grid-cols-3"><Benefit icon={<Repeat2 />} title="Intercambia" text="Matches según vuestros faltantes y repetidos." /><Benefit icon={<Store />} title="Vende" text="Publica los cromos que quieres ofrecer." /><Benefit icon={<CircleDollarSign />} title="Compra" text="Encuentra el cromo que necesitas en el mercado." /></div></div></section>
+
+    <section id="lista-espera" className="mx-4 mb-4 rounded-[2rem] bg-[#c9f31d] px-5 py-16 text-center text-[#173d2a] md:mx-8 md:py-20"><p className="text-xs font-black uppercase tracking-[.18em]">Primeras plazas</p><h2 className="mx-auto mt-3 max-w-3xl text-4xl font-black tracking-[-.055em] sm:text-5xl">Prueba CromoNexo antes que nadie.</h2><p className="mx-auto mt-4 max-w-xl font-medium text-[#39512d]">Apúntate a la lista de espera y te avisaremos cuando abramos la beta.</p><WaitlistForm/></section>
+    <footer className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 text-sm text-[#6b796f] md:px-8"><div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><p className="font-black text-[#173d2a]">Cromo<span className="text-[#7fa800]">Nexo</span></p><p>Hecho para coleccionistas · @cromonexo</p></div><nav className="flex flex-wrap gap-x-5 gap-y-2 text-xs font-bold"><Link href="/aviso-legal">Aviso legal</Link><Link href="/privacidad">Privacidad</Link><Link href="/condiciones">Condiciones de uso</Link></nav></footer>
+  </main>;
+}
+
+function MiniStat({ icon, value, label, tone }: { icon: React.ReactNode; value: string; label: string; tone: "coral" | "lime" }) { return <div className={`rounded-2xl p-3 ${tone === "coral" ? "bg-[#ffefe8] text-[#c84b29]" : "bg-[#eff8c8] text-[#536500]"}`}><div className="flex items-center justify-between">{icon}<strong className="text-2xl">{value}</strong></div><p className="mt-2 text-xs font-black">{label}</p></div>; }
+function StickerRow({ number, name, wanted = false }: { number: string; name: string; wanted?: boolean }) { return <div className="flex items-center gap-3 rounded-xl bg-[#f6f4ed] p-2.5"><span className="grid h-10 w-10 place-items-center rounded-lg bg-[#173d2a] text-xs font-black text-white">{number}</span><span className="flex-1 text-sm font-bold">{name}</span><span className={`rounded-full px-2.5 py-1 text-[10px] font-black ${wanted ? "bg-[#ffebe4] text-[#bd4828]" : "bg-[#edf6ca] text-[#586d00]"}`}>{wanted ? "ME FALTA" : "REPETIDO"}</span></div>; }
+function Benefit({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) { return <article className="surface rounded-3xl p-5 sm:min-h-56"><span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#e8f0dd] text-[#287051]">{icon}</span><h3 className="mt-8 text-xl font-black">{title}</h3><p className="mt-2 text-sm leading-6 text-[#68786e]">{text}</p></article>; }

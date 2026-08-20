@@ -1,0 +1,3600 @@
+[
+  {
+    "id": "deportivo-alaves-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Deportivo Alavés",
+    "category": null
+  },
+  {
+    "id": "deportivo-alaves-2",
+    "code": "2",
+    "name": "Quique Sánchez Flores",
+    "section": "Deportivo Alavés",
+    "category": "entrenador"
+  },
+  {
+    "id": "deportivo-alaves-3",
+    "code": "3",
+    "name": "Sivera",
+    "section": "Deportivo Alavés",
+    "category": "portero"
+  },
+  {
+    "id": "deportivo-alaves-4",
+    "code": "4",
+    "name": null,
+    "section": "Deportivo Alavés",
+    "category": null
+  },
+  {
+    "id": "deportivo-alaves-5",
+    "code": "5",
+    "name": "Jonny",
+    "section": "Deportivo Alavés",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-alaves-6",
+    "code": "6",
+    "name": "Koski",
+    "section": "Deportivo Alavés",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-alaves-7",
+    "code": "7",
+    "name": "Tenaglia",
+    "section": "Deportivo Alavés",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-alaves-8",
+    "code": "8",
+    "name": "Parada",
+    "section": "Deportivo Alavés",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-alaves-9",
+    "code": "9",
+    "name": "Yusi",
+    "section": "Deportivo Alavés",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-alaves-10",
+    "code": "10",
+    "name": null,
+    "section": "Deportivo Alavés",
+    "category": null
+  },
+  {
+    "id": "deportivo-alaves-11",
+    "code": "11",
+    "name": "Benavidez",
+    "section": "Deportivo Alavés",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-alaves-12",
+    "code": "12",
+    "name": "Blanco",
+    "section": "Deportivo Alavés",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-alaves-13",
+    "code": "13",
+    "name": "Guevara",
+    "section": "Deportivo Alavés",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-alaves-14",
+    "code": "14",
+    "name": "Aleñá",
+    "section": "Deportivo Alavés",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-alaves-15",
+    "code": "15",
+    "name": "Pablo Ibáñez",
+    "section": "Deportivo Alavés",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-alaves-16",
+    "code": "16",
+    "name": "Denis Suárez",
+    "section": "Deportivo Alavés",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-alaves-17",
+    "code": "17",
+    "name": "Ángel Pérez",
+    "section": "Deportivo Alavés",
+    "category": "delantero"
+  },
+  {
+    "id": "deportivo-alaves-18a",
+    "code": "18A",
+    "name": "Abde",
+    "section": "Deportivo Alavés",
+    "category": "delantero"
+  },
+  {
+    "id": "deportivo-alaves-18b",
+    "code": "18B",
+    "name": "Mañas",
+    "section": "Deportivo Alavés",
+    "category": "delantero"
+  },
+  {
+    "id": "deportivo-alaves-19",
+    "code": "19",
+    "name": "Toni Martínez",
+    "section": "Deportivo Alavés",
+    "category": "delantero"
+  },
+  {
+    "id": "deportivo-alaves-20",
+    "code": "20",
+    "name": "Boyé",
+    "section": "Deportivo Alavés",
+    "category": "delantero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Athletic Club De Bilbao",
+    "category": null
+  },
+  {
+    "id": "athletic-club-de-bilbao-2",
+    "code": "2",
+    "name": "Edin Terzic",
+    "section": "Athletic Club De Bilbao",
+    "category": "entrenador"
+  },
+  {
+    "id": "athletic-club-de-bilbao-3",
+    "code": "3",
+    "name": "Unai Simón",
+    "section": "Athletic Club De Bilbao",
+    "category": "portero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-4",
+    "code": "4",
+    "name": "Padilla",
+    "section": "Athletic Club De Bilbao",
+    "category": "portero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-5",
+    "code": "5",
+    "name": "Areso",
+    "section": "Athletic Club De Bilbao",
+    "category": "defensa"
+  },
+  {
+    "id": "athletic-club-de-bilbao-6a",
+    "code": "6A",
+    "name": "Paredes",
+    "section": "Athletic Club De Bilbao",
+    "category": "defensa"
+  },
+  {
+    "id": "athletic-club-de-bilbao-6b",
+    "code": "6B",
+    "name": "Yeray",
+    "section": "Athletic Club De Bilbao",
+    "category": "defensa"
+  },
+  {
+    "id": "athletic-club-de-bilbao-7",
+    "code": "7",
+    "name": "Vivian",
+    "section": "Athletic Club De Bilbao",
+    "category": "defensa"
+  },
+  {
+    "id": "athletic-club-de-bilbao-8",
+    "code": "8",
+    "name": "Laporte",
+    "section": "Athletic Club De Bilbao",
+    "category": "defensa"
+  },
+  {
+    "id": "athletic-club-de-bilbao-9a",
+    "code": "9A",
+    "name": "Yuri",
+    "section": "Athletic Club De Bilbao",
+    "category": "defensa"
+  },
+  {
+    "id": "athletic-club-de-bilbao-9b",
+    "code": "9B",
+    "name": "Adama Boiro",
+    "section": "Athletic Club De Bilbao",
+    "category": "defensa"
+  },
+  {
+    "id": "athletic-club-de-bilbao-10",
+    "code": "10",
+    "name": "Jauregizar",
+    "section": "Athletic Club De Bilbao",
+    "category": "medio"
+  },
+  {
+    "id": "athletic-club-de-bilbao-11",
+    "code": "11",
+    "name": "Ruiz de Galarreta",
+    "section": "Athletic Club De Bilbao",
+    "category": "medio"
+  },
+  {
+    "id": "athletic-club-de-bilbao-12",
+    "code": "12",
+    "name": "Rego",
+    "section": "Athletic Club De Bilbao",
+    "category": "medio"
+  },
+  {
+    "id": "athletic-club-de-bilbao-13",
+    "code": "13",
+    "name": "Unai Gómez",
+    "section": "Athletic Club De Bilbao",
+    "category": "medio"
+  },
+  {
+    "id": "athletic-club-de-bilbao-14",
+    "code": "14",
+    "name": "Sancet",
+    "section": "Athletic Club De Bilbao",
+    "category": "medio"
+  },
+  {
+    "id": "athletic-club-de-bilbao-15",
+    "code": "15",
+    "name": "Nico Serrano",
+    "section": "Athletic Club De Bilbao",
+    "category": "medio"
+  },
+  {
+    "id": "athletic-club-de-bilbao-16",
+    "code": "16",
+    "name": "Berenguer",
+    "section": "Athletic Club De Bilbao",
+    "category": "delantero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-17a",
+    "code": "17A",
+    "name": "Robert Navarro",
+    "section": "Athletic Club De Bilbao",
+    "category": "delantero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-17b",
+    "code": "17B",
+    "name": "Maroan",
+    "section": "Athletic Club De Bilbao",
+    "category": "delantero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-18",
+    "code": "18",
+    "name": "Nico Williams",
+    "section": "Athletic Club De Bilbao",
+    "category": "delantero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-19",
+    "code": "19",
+    "name": "Williams",
+    "section": "Athletic Club De Bilbao",
+    "category": "delantero"
+  },
+  {
+    "id": "athletic-club-de-bilbao-20",
+    "code": "20",
+    "name": "Guruzeta",
+    "section": "Athletic Club De Bilbao",
+    "category": null
+  },
+  {
+    "id": "atletico-de-madrid-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Atlético De Madrid",
+    "category": null
+  },
+  {
+    "id": "atletico-de-madrid-2",
+    "code": "2",
+    "name": "Cholo Simeone",
+    "section": "Atlético De Madrid",
+    "category": "entrenador"
+  },
+  {
+    "id": "atletico-de-madrid-3",
+    "code": "3",
+    "name": "Oblak",
+    "section": "Atlético De Madrid",
+    "category": "portero"
+  },
+  {
+    "id": "atletico-de-madrid-4",
+    "code": "4",
+    "name": "Musso",
+    "section": "Atlético De Madrid",
+    "category": "portero"
+  },
+  {
+    "id": "atletico-de-madrid-5",
+    "code": "5",
+    "name": "Marcos Llorente",
+    "section": "Atlético De Madrid",
+    "category": "defensa"
+  },
+  {
+    "id": "atletico-de-madrid-6",
+    "code": "6",
+    "name": "Nahuel Molina",
+    "section": "Atlético De Madrid",
+    "category": "defensa"
+  },
+  {
+    "id": "atletico-de-madrid-7",
+    "code": "7",
+    "name": "Pubill",
+    "section": "Atlético De Madrid",
+    "category": "defensa"
+  },
+  {
+    "id": "atletico-de-madrid-8a",
+    "code": "8A",
+    "name": "Le Normand",
+    "section": "Atlético De Madrid",
+    "category": "defensa"
+  },
+  {
+    "id": "atletico-de-madrid-8b",
+    "code": "8B",
+    "name": "Giménez",
+    "section": "Atlético De Madrid",
+    "category": "defensa"
+  },
+  {
+    "id": "atletico-de-madrid-9",
+    "code": "9",
+    "name": "Hancko",
+    "section": "Atlético De Madrid",
+    "category": "defensa"
+  },
+  {
+    "id": "atletico-de-madrid-10",
+    "code": "10",
+    "name": "Ruggeri",
+    "section": "Atlético De Madrid",
+    "category": "defensa"
+  },
+  {
+    "id": "atletico-de-madrid-11",
+    "code": "11",
+    "name": "Koke",
+    "section": "Atlético De Madrid",
+    "category": "medio"
+  },
+  {
+    "id": "atletico-de-madrid-12",
+    "code": "12",
+    "name": "Barrios",
+    "section": "Atlético De Madrid",
+    "category": "medio"
+  },
+  {
+    "id": "atletico-de-madrid-13",
+    "code": "13",
+    "name": "Johnny Cardoso",
+    "section": "Atlético De Madrid",
+    "category": "medio"
+  },
+  {
+    "id": "atletico-de-madrid-14a",
+    "code": "14A",
+    "name": "Rodri Mendoza",
+    "section": "Atlético De Madrid",
+    "category": "medio"
+  },
+  {
+    "id": "atletico-de-madrid-14b",
+    "code": "14B",
+    "name": "Obed Vargas",
+    "section": "Atlético De Madrid",
+    "category": "medio"
+  },
+  {
+    "id": "atletico-de-madrid-15",
+    "code": "15",
+    "name": "Álex Baena",
+    "section": "Atlético De Madrid",
+    "category": "medio"
+  },
+  {
+    "id": "atletico-de-madrid-16",
+    "code": "16",
+    "name": "Almada",
+    "section": "Atlético De Madrid",
+    "category": "medio"
+  },
+  {
+    "id": "atletico-de-madrid-17",
+    "code": "17",
+    "name": "Giuliano",
+    "section": "Atlético De Madrid",
+    "category": "delantero"
+  },
+  {
+    "id": "atletico-de-madrid-18",
+    "code": "18",
+    "name": "Lookman",
+    "section": "Atlético De Madrid",
+    "category": "delantero"
+  },
+  {
+    "id": "atletico-de-madrid-19",
+    "code": "19",
+    "name": "Sorloth",
+    "section": "Atlético De Madrid",
+    "category": "delantero"
+  },
+  {
+    "id": "atletico-de-madrid-20",
+    "code": "20",
+    "name": "Julián Alvarez",
+    "section": "Atlético De Madrid",
+    "category": "delantero"
+  },
+  {
+    "id": "fc-barcelona-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Fc Barcelona",
+    "category": null
+  },
+  {
+    "id": "fc-barcelona-2",
+    "code": "2",
+    "name": "Hansi Flick",
+    "section": "Fc Barcelona",
+    "category": "entrenador"
+  },
+  {
+    "id": "fc-barcelona-3",
+    "code": "3",
+    "name": "Joan García",
+    "section": "Fc Barcelona",
+    "category": "portero"
+  },
+  {
+    "id": "fc-barcelona-4",
+    "code": "4",
+    "name": "Szczesny",
+    "section": "Fc Barcelona",
+    "category": "portero"
+  },
+  {
+    "id": "fc-barcelona-5",
+    "code": "5",
+    "name": "Koundé",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-6a",
+    "code": "6A",
+    "name": "Araujo",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-6b",
+    "code": "6B",
+    "name": "Christensen",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-7",
+    "code": "7",
+    "name": "Cubarsí",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-8",
+    "code": "8",
+    "name": "Gerard Martín",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-9",
+    "code": "9",
+    "name": "Joao Cancelo",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-10",
+    "code": "10",
+    "name": "Balde",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-11",
+    "code": "11",
+    "name": "Eric García",
+    "section": "Fc Barcelona",
+    "category": "defensa"
+  },
+  {
+    "id": "fc-barcelona-12",
+    "code": "12",
+    "name": "De Jong",
+    "section": "Fc Barcelona",
+    "category": "medio"
+  },
+  {
+    "id": "fc-barcelona-13",
+    "code": "13",
+    "name": "Gavi",
+    "section": "Fc Barcelona",
+    "category": "medio"
+  },
+  {
+    "id": "fc-barcelona-14",
+    "code": "14",
+    "name": "Bernal",
+    "section": "Fc Barcelona",
+    "category": "medio"
+  },
+  {
+    "id": "fc-barcelona-15",
+    "code": "15",
+    "name": "Pedri",
+    "section": "Fc Barcelona",
+    "category": "medio"
+  },
+  {
+    "id": "fc-barcelona-16",
+    "code": "16",
+    "name": "Fermín",
+    "section": "Fc Barcelona",
+    "category": "medio"
+  },
+  {
+    "id": "fc-barcelona-17",
+    "code": "17",
+    "name": "Dani Olmo",
+    "section": "Fc Barcelona",
+    "category": "delantero"
+  },
+  {
+    "id": "fc-barcelona-18",
+    "code": "18",
+    "name": "Ferran Torres",
+    "section": "Fc Barcelona",
+    "category": "delantero"
+  },
+  {
+    "id": "fc-barcelona-19",
+    "code": "19",
+    "name": "Raphinha",
+    "section": "Fc Barcelona",
+    "category": "delantero"
+  },
+  {
+    "id": "fc-barcelona-20",
+    "code": "20",
+    "name": "Lamine Yamal",
+    "section": "Fc Barcelona",
+    "category": "delantero"
+  },
+  {
+    "id": "real-betis-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Real Betis",
+    "category": null
+  },
+  {
+    "id": "real-betis-2",
+    "code": "2",
+    "name": "Manuel Pellegrini",
+    "section": "Real Betis",
+    "category": "entrenador"
+  },
+  {
+    "id": "real-betis-3",
+    "code": "3",
+    "name": "Valles",
+    "section": "Real Betis",
+    "category": "portero"
+  },
+  {
+    "id": "real-betis-4",
+    "code": "4",
+    "name": "Pau López",
+    "section": "Real Betis",
+    "category": "portero"
+  },
+  {
+    "id": "real-betis-5a",
+    "code": "5A",
+    "name": "Aitor Ruibal",
+    "section": "Real Betis",
+    "category": "defensa"
+  },
+  {
+    "id": "real-betis-5b",
+    "code": "5B",
+    "name": "Bellerín",
+    "section": "Real Betis",
+    "category": "defensa"
+  },
+  {
+    "id": "real-betis-6",
+    "code": "6",
+    "name": "Diego Llorente",
+    "section": "Real Betis",
+    "category": "defensa"
+  },
+  {
+    "id": "real-betis-7",
+    "code": "7",
+    "name": "Bartra",
+    "section": "Real Betis",
+    "category": "defensa"
+  },
+  {
+    "id": "real-betis-8",
+    "code": "8",
+    "name": "Natan",
+    "section": "Real Betis",
+    "category": "defensa"
+  },
+  {
+    "id": "real-betis-9",
+    "code": "9",
+    "name": "Valentín Gómez",
+    "section": "Real Betis",
+    "category": "defensa"
+  },
+  {
+    "id": "real-betis-10",
+    "code": "10",
+    "name": "Marc Roca",
+    "section": "Real Betis",
+    "category": "medio"
+  },
+  {
+    "id": "real-betis-11",
+    "code": "11",
+    "name": "Amrabat",
+    "section": "Real Betis",
+    "category": "medio"
+  },
+  {
+    "id": "real-betis-12",
+    "code": "12",
+    "name": "Fidalgo",
+    "section": "Real Betis",
+    "category": "medio"
+  },
+  {
+    "id": "real-betis-13",
+    "code": "13",
+    "name": null,
+    "section": "Real Betis",
+    "category": null
+  },
+  {
+    "id": "real-betis-14",
+    "code": "14",
+    "name": "Lo Celso",
+    "section": "Real Betis",
+    "category": "medio"
+  },
+  {
+    "id": "real-betis-15",
+    "code": "15",
+    "name": "Pablo Fornals",
+    "section": "Real Betis",
+    "category": "medio"
+  },
+  {
+    "id": "real-betis-16",
+    "code": "16",
+    "name": "Isco",
+    "section": "Real Betis",
+    "category": "medio"
+  },
+  {
+    "id": "real-betis-17",
+    "code": "17",
+    "name": "Riquelme",
+    "section": "Real Betis",
+    "category": "delantero"
+  },
+  {
+    "id": "real-betis-18",
+    "code": "18",
+    "name": "Antony",
+    "section": "Real Betis",
+    "category": "delantero"
+  },
+  {
+    "id": "real-betis-19",
+    "code": "19",
+    "name": "Cucho Hernández",
+    "section": "Real Betis",
+    "category": "delantero"
+  },
+  {
+    "id": "real-betis-20",
+    "code": "20",
+    "name": "Abde",
+    "section": "Real Betis",
+    "category": "delantero"
+  },
+  {
+    "id": "rc-celta-de-vigo-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Rc Celta De Vigo",
+    "category": null
+  },
+  {
+    "id": "rc-celta-de-vigo-2",
+    "code": "2",
+    "name": "Claudio Giráldez",
+    "section": "Rc Celta De Vigo",
+    "category": "entrenador"
+  },
+  {
+    "id": "rc-celta-de-vigo-3",
+    "code": "3",
+    "name": "Radu",
+    "section": "Rc Celta De Vigo",
+    "category": "portero"
+  },
+  {
+    "id": "rc-celta-de-vigo-4",
+    "code": "4",
+    "name": "Iván Villar",
+    "section": "Rc Celta De Vigo",
+    "category": "portero"
+  },
+  {
+    "id": "rc-celta-de-vigo-5",
+    "code": "5",
+    "name": "Álvaro Núñez",
+    "section": "Rc Celta De Vigo",
+    "category": "defensa"
+  },
+  {
+    "id": "rc-celta-de-vigo-6",
+    "code": "6",
+    "name": "Javi Rueda",
+    "section": "Rc Celta De Vigo",
+    "category": "defensa"
+  },
+  {
+    "id": "rc-celta-de-vigo-7",
+    "code": "7",
+    "name": "Javi Rodríguez",
+    "section": "Rc Celta De Vigo",
+    "category": "defensa"
+  },
+  {
+    "id": "rc-celta-de-vigo-8",
+    "code": "8",
+    "name": "Starfelt",
+    "section": "Rc Celta De Vigo",
+    "category": "defensa"
+  },
+  {
+    "id": "rc-celta-de-vigo-9a",
+    "code": "9A",
+    "name": "Marcos Alonso",
+    "section": "Rc Celta De Vigo",
+    "category": "defensa"
+  },
+  {
+    "id": "rc-celta-de-vigo-9b",
+    "code": "9B",
+    "name": "Yoel Lago",
+    "section": "Rc Celta De Vigo",
+    "category": "defensa"
+  },
+  {
+    "id": "rc-celta-de-vigo-10",
+    "code": "10",
+    "name": "Carreira",
+    "section": "Rc Celta De Vigo",
+    "category": "defensa"
+  },
+  {
+    "id": "rc-celta-de-vigo-11",
+    "code": "11",
+    "name": "Ilaix Moriba",
+    "section": "Rc Celta De Vigo",
+    "category": "medio"
+  },
+  {
+    "id": "rc-celta-de-vigo-12",
+    "code": "12",
+    "name": "Miguel Román",
+    "section": "Rc Celta De Vigo",
+    "category": "medio"
+  },
+  {
+    "id": "rc-celta-de-vigo-13",
+    "code": "13",
+    "name": "Hugo Álvarez",
+    "section": "Rc Celta De Vigo",
+    "category": "medio"
+  },
+  {
+    "id": "rc-celta-de-vigo-14",
+    "code": "14",
+    "name": "Sotelo",
+    "section": "Rc Celta De Vigo",
+    "category": "medio"
+  },
+  {
+    "id": "rc-celta-de-vigo-15",
+    "code": "15",
+    "name": "Fer López",
+    "section": "Rc Celta De Vigo",
+    "category": "medio"
+  },
+  {
+    "id": "rc-celta-de-vigo-16",
+    "code": "16",
+    "name": "Swedberg",
+    "section": "Rc Celta De Vigo",
+    "category": "medio"
+  },
+  {
+    "id": "rc-celta-de-vigo-17",
+    "code": "17",
+    "name": "Iago Aspas",
+    "section": "Rc Celta De Vigo",
+    "category": "delantero"
+  },
+  {
+    "id": "rc-celta-de-vigo-18a",
+    "code": "18A",
+    "name": "Pablo Durán",
+    "section": "Rc Celta De Vigo",
+    "category": "delantero"
+  },
+  {
+    "id": "rc-celta-de-vigo-18b",
+    "code": "18B",
+    "name": "El-Abdellaoui",
+    "section": "Rc Celta De Vigo",
+    "category": "delantero"
+  },
+  {
+    "id": "rc-celta-de-vigo-19",
+    "code": "19",
+    "name": "Jutglà",
+    "section": "Rc Celta De Vigo",
+    "category": "delantero"
+  },
+  {
+    "id": "rc-celta-de-vigo-20",
+    "code": "20",
+    "name": "Borja Iglesias",
+    "section": "Rc Celta De Vigo",
+    "category": "delantero"
+  },
+  {
+    "id": "deportivo-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Deportivo",
+    "category": null
+  },
+  {
+    "id": "deportivo-2",
+    "code": "2",
+    "name": "Antonio Hidalgo",
+    "section": "Deportivo",
+    "category": "entrenador"
+  },
+  {
+    "id": "deportivo-3",
+    "code": "3",
+    "name": "Álvaro Fernández",
+    "section": "Deportivo",
+    "category": "portero"
+  },
+  {
+    "id": "deportivo-4",
+    "code": "4",
+    "name": "Germán Parreño",
+    "section": "Deportivo",
+    "category": "portero"
+  },
+  {
+    "id": "deportivo-5",
+    "code": "5",
+    "name": "Adrià Altimira",
+    "section": "Deportivo",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-6",
+    "code": "6",
+    "name": "Loureiro",
+    "section": "Deportivo",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-7",
+    "code": "7",
+    "name": "Noubi",
+    "section": "Deportivo",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-8",
+    "code": "8",
+    "name": "Dani Barcia",
+    "section": "Deportivo",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-9a",
+    "code": "9A",
+    "name": "Ximo Navarro",
+    "section": "Deportivo",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-9b",
+    "code": "9B",
+    "name": "Arnau Comas",
+    "section": "Deportivo",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-10",
+    "code": "10",
+    "name": "Quagliata",
+    "section": "Deportivo",
+    "category": "defensa"
+  },
+  {
+    "id": "deportivo-11",
+    "code": "11",
+    "name": "Villares",
+    "section": "Deportivo",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-12",
+    "code": "12",
+    "name": "Riki",
+    "section": "Deportivo",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-13",
+    "code": "13",
+    "name": "Mario Soriano",
+    "section": "Deportivo",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-14",
+    "code": "14",
+    "name": "José Ángel",
+    "section": "Deportivo",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-15",
+    "code": "15",
+    "name": "Luismi Cruz",
+    "section": "Deportivo",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-16",
+    "code": "16",
+    "name": "Mella",
+    "section": "Deportivo",
+    "category": "medio"
+  },
+  {
+    "id": "deportivo-17",
+    "code": "17",
+    "name": null,
+    "section": "Deportivo",
+    "category": null
+  },
+  {
+    "id": "deportivo-18",
+    "code": "18",
+    "name": "Yeremay",
+    "section": "Deportivo",
+    "category": "delantero"
+  },
+  {
+    "id": "deportivo-19",
+    "code": "19",
+    "name": "Eddahchouri",
+    "section": "Deportivo",
+    "category": "delantero"
+  },
+  {
+    "id": "deportivo-20",
+    "code": "20",
+    "name": "Nsongo",
+    "section": "Deportivo",
+    "category": "delantero"
+  },
+  {
+    "id": "elche-cf-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Elche Cf",
+    "category": null
+  },
+  {
+    "id": "elche-cf-2",
+    "code": "2",
+    "name": "Eder Saravia",
+    "section": "Elche Cf",
+    "category": "entrenador"
+  },
+  {
+    "id": "elche-cf-3",
+    "code": "3",
+    "name": "Dituro",
+    "section": "Elche Cf",
+    "category": "portero"
+  },
+  {
+    "id": "elche-cf-4",
+    "code": "4",
+    "name": null,
+    "section": "Elche Cf",
+    "category": null
+  },
+  {
+    "id": "elche-cf-5",
+    "code": "5",
+    "name": "Pétrot",
+    "section": "Elche Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "elche-cf-6",
+    "code": "6",
+    "name": "Chust",
+    "section": "Elche Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "elche-cf-7",
+    "code": "7",
+    "name": "Bigas",
+    "section": "Elche Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "elche-cf-8",
+    "code": "8",
+    "name": "Affengruber",
+    "section": "Elche Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "elche-cf-9a",
+    "code": "9A",
+    "name": "Pedrosa",
+    "section": "Elche Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "elche-cf-9b",
+    "code": "9B",
+    "name": "Sangaré",
+    "section": "Elche Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "elche-cf-10",
+    "code": "10",
+    "name": "Germán Valera",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-11",
+    "code": "11",
+    "name": "Martim Neto",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-12",
+    "code": "12",
+    "name": "Gonzalo Villar",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-13a",
+    "code": "13A",
+    "name": "Fede Redondo",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-13b",
+    "code": "13B",
+    "name": "Jon Chetauya",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-14",
+    "code": "14",
+    "name": "Marc Aguado",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-15",
+    "code": "15",
+    "name": "Josan",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-16",
+    "code": "16",
+    "name": "Morente",
+    "section": "Elche Cf",
+    "category": "medio"
+  },
+  {
+    "id": "elche-cf-17",
+    "code": "17",
+    "name": null,
+    "section": "Elche Cf",
+    "category": null
+  },
+  {
+    "id": "elche-cf-18",
+    "code": "18",
+    "name": "Cepeda",
+    "section": "Elche Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "elche-cf-19",
+    "code": "19",
+    "name": "Diangana",
+    "section": "Elche Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "elche-cf-20",
+    "code": "20",
+    "name": "Yago Santiago",
+    "section": "Elche Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "rcd-espanyol-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Rcd Espanyol",
+    "category": null
+  },
+  {
+    "id": "rcd-espanyol-2",
+    "code": "2",
+    "name": "Manolo González",
+    "section": "Rcd Espanyol",
+    "category": "entrenador"
+  },
+  {
+    "id": "rcd-espanyol-3",
+    "code": "3",
+    "name": "Dmitrovic",
+    "section": "Rcd Espanyol",
+    "category": "portero"
+  },
+  {
+    "id": "rcd-espanyol-4",
+    "code": "4",
+    "name": "Fortuño",
+    "section": "Rcd Espanyol",
+    "category": "portero"
+  },
+  {
+    "id": "rcd-espanyol-5",
+    "code": "5",
+    "name": "El Hilali",
+    "section": "Rcd Espanyol",
+    "category": "defensa"
+  },
+  {
+    "id": "rcd-espanyol-6",
+    "code": "6",
+    "name": "Rubén Sánchez",
+    "section": "Rcd Espanyol",
+    "category": "defensa"
+  },
+  {
+    "id": "rcd-espanyol-7",
+    "code": "7",
+    "name": "Riedel",
+    "section": "Rcd Espanyol",
+    "category": "defensa"
+  },
+  {
+    "id": "rcd-espanyol-8",
+    "code": "8",
+    "name": "Cabrera",
+    "section": "Rcd Espanyol",
+    "category": "defensa"
+  },
+  {
+    "id": "rcd-espanyol-9",
+    "code": "9",
+    "name": "Miguel Rubio",
+    "section": "Rcd Espanyol",
+    "category": "defensa"
+  },
+  {
+    "id": "rcd-espanyol-10",
+    "code": "10",
+    "name": null,
+    "section": "Rcd Espanyol",
+    "category": null
+  },
+  {
+    "id": "rcd-espanyol-11",
+    "code": "11",
+    "name": "Pol Lozano",
+    "section": "Rcd Espanyol",
+    "category": "medio"
+  },
+  {
+    "id": "rcd-espanyol-12",
+    "code": "12",
+    "name": "Urko",
+    "section": "Rcd Espanyol",
+    "category": "medio"
+  },
+  {
+    "id": "rcd-espanyol-13",
+    "code": "13",
+    "name": "Edu Expósito",
+    "section": "Rcd Espanyol",
+    "category": "medio"
+  },
+  {
+    "id": "rcd-espanyol-14",
+    "code": "14",
+    "name": "Jofre",
+    "section": "Rcd Espanyol",
+    "category": "medio"
+  },
+  {
+    "id": "rcd-espanyol-15",
+    "code": "15",
+    "name": null,
+    "section": "Rcd Espanyol",
+    "category": null
+  },
+  {
+    "id": "rcd-espanyol-16",
+    "code": "16",
+    "name": "Dolan",
+    "section": "Rcd Espanyol",
+    "category": "delantero"
+  },
+  {
+    "id": "rcd-espanyol-17",
+    "code": "17",
+    "name": "Pere Milla",
+    "section": "Rcd Espanyol",
+    "category": "delantero"
+  },
+  {
+    "id": "rcd-espanyol-18",
+    "code": "18",
+    "name": "Puado",
+    "section": "Rcd Espanyol",
+    "category": "delantero"
+  },
+  {
+    "id": "rcd-espanyol-19",
+    "code": "19",
+    "name": "Kike García",
+    "section": "Rcd Espanyol",
+    "category": "delantero"
+  },
+  {
+    "id": "rcd-espanyol-20",
+    "code": "20",
+    "name": "Roberto Fernández",
+    "section": "Rcd Espanyol",
+    "category": "delantero"
+  },
+  {
+    "id": "getafe-cf-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Getafe Cf",
+    "category": null
+  },
+  {
+    "id": "getafe-cf-2",
+    "code": "2",
+    "name": "Jose Bordalás",
+    "section": "Getafe Cf",
+    "category": "entrenador"
+  },
+  {
+    "id": "getafe-cf-3",
+    "code": "3",
+    "name": "David Soria",
+    "section": "Getafe Cf",
+    "category": "portero"
+  },
+  {
+    "id": "getafe-cf-4",
+    "code": "4",
+    "name": "Letacek",
+    "section": "Getafe Cf",
+    "category": "portero"
+  },
+  {
+    "id": "getafe-cf-5",
+    "code": "5",
+    "name": "Kiko Femenía",
+    "section": "Getafe Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "getafe-cf-6",
+    "code": "6",
+    "name": "Djené",
+    "section": "Getafe Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "getafe-cf-7",
+    "code": "7",
+    "name": "Boselli",
+    "section": "Getafe Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "getafe-cf-8",
+    "code": "8",
+    "name": "Abqar",
+    "section": "Getafe Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "getafe-cf-9",
+    "code": "9",
+    "name": "Zaid Romero",
+    "section": "Getafe Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "getafe-cf-10",
+    "code": "10",
+    "name": "Davinchi",
+    "section": "Getafe Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "getafe-cf-11",
+    "code": "11",
+    "name": "Mario Martín",
+    "section": "Getafe Cf",
+    "category": "medio"
+  },
+  {
+    "id": "getafe-cf-12",
+    "code": "12",
+    "name": "Javi Muñoz",
+    "section": "Getafe Cf",
+    "category": "medio"
+  },
+  {
+    "id": "getafe-cf-13",
+    "code": "13",
+    "name": null,
+    "section": "Getafe Cf",
+    "category": null
+  },
+  {
+    "id": "getafe-cf-14",
+    "code": "14",
+    "name": null,
+    "section": "Getafe Cf",
+    "category": null
+  },
+  {
+    "id": "getafe-cf-15",
+    "code": "15",
+    "name": null,
+    "section": "Getafe Cf",
+    "category": null
+  },
+  {
+    "id": "getafe-cf-16",
+    "code": "16",
+    "name": null,
+    "section": "Getafe Cf",
+    "category": null
+  },
+  {
+    "id": "getafe-cf-17",
+    "code": "17",
+    "name": "Álex Sancris",
+    "section": "Getafe Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "getafe-cf-18",
+    "code": "18",
+    "name": "Borja Mayoral",
+    "section": "Getafe Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "getafe-cf-19",
+    "code": "19",
+    "name": "Luis Vázquez",
+    "section": "Getafe Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "getafe-cf-20",
+    "code": "20",
+    "name": "Satriano",
+    "section": "Getafe Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "levante-ud-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Levante Ud",
+    "category": null
+  },
+  {
+    "id": "levante-ud-2",
+    "code": "2",
+    "name": "Luís Castro",
+    "section": "Levante Ud",
+    "category": "entrenador"
+  },
+  {
+    "id": "levante-ud-3",
+    "code": "3",
+    "name": "Ryan",
+    "section": "Levante Ud",
+    "category": "portero"
+  },
+  {
+    "id": "levante-ud-4",
+    "code": "4",
+    "name": "Pablo Campos",
+    "section": "Levante Ud",
+    "category": "portero"
+  },
+  {
+    "id": "levante-ud-5",
+    "code": "5",
+    "name": "Toljan",
+    "section": "Levante Ud",
+    "category": "defensa"
+  },
+  {
+    "id": "levante-ud-6",
+    "code": "6",
+    "name": "Elgezabal",
+    "section": "Levante Ud",
+    "category": "defensa"
+  },
+  {
+    "id": "levante-ud-7",
+    "code": "7",
+    "name": "Dela",
+    "section": "Levante Ud",
+    "category": "defensa"
+  },
+  {
+    "id": "levante-ud-8",
+    "code": "8",
+    "name": null,
+    "section": "Levante Ud",
+    "category": null
+  },
+  {
+    "id": "levante-ud-9",
+    "code": "9",
+    "name": "Manu Sánchez",
+    "section": "Levante Ud",
+    "category": "defensa"
+  },
+  {
+    "id": "levante-ud-10",
+    "code": "10",
+    "name": "Arriaga",
+    "section": "Levante Ud",
+    "category": "medio"
+  },
+  {
+    "id": "levante-ud-11",
+    "code": "11",
+    "name": "Oriol Rey",
+    "section": "Levante Ud",
+    "category": "medio"
+  },
+  {
+    "id": "levante-ud-12",
+    "code": "12",
+    "name": "Olasagasti",
+    "section": "Levante Ud",
+    "category": "medio"
+  },
+  {
+    "id": "levante-ud-13",
+    "code": "13",
+    "name": null,
+    "section": "Levante Ud",
+    "category": null
+  },
+  {
+    "id": "levante-ud-14a",
+    "code": "14A",
+    "name": "Victor García",
+    "section": "Levante Ud",
+    "category": "medio"
+  },
+  {
+    "id": "levante-ud-14b",
+    "code": "14B",
+    "name": "Paco Cortés",
+    "section": "Levante Ud",
+    "category": "medio"
+  },
+  {
+    "id": "levante-ud-15",
+    "code": "15",
+    "name": "Carlos Álvarez",
+    "section": "Levante Ud",
+    "category": "medio"
+  },
+  {
+    "id": "levante-ud-16",
+    "code": "16",
+    "name": "Tunde",
+    "section": "Levante Ud",
+    "category": "delantero"
+  },
+  {
+    "id": "levante-ud-17",
+    "code": "17",
+    "name": "Brugué",
+    "section": "Levante Ud",
+    "category": "delantero"
+  },
+  {
+    "id": "levante-ud-18",
+    "code": "18",
+    "name": "Iván Romero",
+    "section": "Levante Ud",
+    "category": "delantero"
+  },
+  {
+    "id": "levante-ud-19",
+    "code": "19",
+    "name": "Etta Eyong",
+    "section": "Levante Ud",
+    "category": "delantero"
+  },
+  {
+    "id": "levante-ud-20",
+    "code": "20",
+    "name": "Carlos Espí",
+    "section": "Levante Ud",
+    "category": "delantero"
+  },
+  {
+    "id": "real-madrid-cf-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Real Madrid Cf",
+    "category": null
+  },
+  {
+    "id": "real-madrid-cf-2",
+    "code": "2",
+    "name": "José Mourinho",
+    "section": "Real Madrid Cf",
+    "category": "entrenador"
+  },
+  {
+    "id": "real-madrid-cf-3",
+    "code": "3",
+    "name": "Courtois",
+    "section": "Real Madrid Cf",
+    "category": "portero"
+  },
+  {
+    "id": "real-madrid-cf-4",
+    "code": "4",
+    "name": "Lunin",
+    "section": "Real Madrid Cf",
+    "category": "portero"
+  },
+  {
+    "id": "real-madrid-cf-5",
+    "code": "5",
+    "name": "Trent",
+    "section": "Real Madrid Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "real-madrid-cf-6",
+    "code": "6",
+    "name": "Militao",
+    "section": "Real Madrid Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "real-madrid-cf-7",
+    "code": "7",
+    "name": "Asencio",
+    "section": "Real Madrid Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "real-madrid-cf-8",
+    "code": "8",
+    "name": "Rüdiger",
+    "section": "Real Madrid Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "real-madrid-cf-9",
+    "code": "9",
+    "name": "Huijsen",
+    "section": "Real Madrid Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "real-madrid-cf-10a",
+    "code": "10A",
+    "name": "Carreras",
+    "section": "Real Madrid Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "real-madrid-cf-10b",
+    "code": "10B",
+    "name": "Mendy",
+    "section": "Real Madrid Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "real-madrid-cf-11",
+    "code": "11",
+    "name": "Tchouaméni",
+    "section": "Real Madrid Cf",
+    "category": "medio"
+  },
+  {
+    "id": "real-madrid-cf-12",
+    "code": "12",
+    "name": "Fede Valverde",
+    "section": "Real Madrid Cf",
+    "category": "medio"
+  },
+  {
+    "id": "real-madrid-cf-13",
+    "code": "13",
+    "name": "Camavinga",
+    "section": "Real Madrid Cf",
+    "category": "medio"
+  },
+  {
+    "id": "real-madrid-cf-14",
+    "code": "14",
+    "name": "Bellingham",
+    "section": "Real Madrid Cf",
+    "category": "medio"
+  },
+  {
+    "id": "real-madrid-cf-15a",
+    "code": "15A",
+    "name": "Güler",
+    "section": "Real Madrid Cf",
+    "category": "medio"
+  },
+  {
+    "id": "real-madrid-cf-15b",
+    "code": "15B",
+    "name": "Thiago Pitarch",
+    "section": "Real Madrid Cf",
+    "category": "medio"
+  },
+  {
+    "id": "real-madrid-cf-16a",
+    "code": "16A",
+    "name": "Mastantuono",
+    "section": "Real Madrid Cf",
+    "category": "medio"
+  },
+  {
+    "id": "real-madrid-cf-16b",
+    "code": "16B",
+    "name": "Brahim Díaz",
+    "section": "Real Madrid Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "real-madrid-cf-17",
+    "code": "17",
+    "name": "Gonzalo",
+    "section": "Real Madrid Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "real-madrid-cf-18",
+    "code": "18",
+    "name": "Rodrygo",
+    "section": "Real Madrid Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "real-madrid-cf-19",
+    "code": "19",
+    "name": "Vinícius",
+    "section": "Real Madrid Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "real-madrid-cf-20",
+    "code": "20",
+    "name": "Mbappé",
+    "section": "Real Madrid Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "malaga-cf-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Malaga Cf",
+    "category": null
+  },
+  {
+    "id": "malaga-cf-2",
+    "code": "2",
+    "name": "Juan Franisco Funes",
+    "section": "Malaga Cf",
+    "category": "entrenador"
+  },
+  {
+    "id": "malaga-cf-3",
+    "code": "3",
+    "name": "Alfonso Herrero",
+    "section": "Malaga Cf",
+    "category": "portero"
+  },
+  {
+    "id": "malaga-cf-4",
+    "code": "4",
+    "name": "Carlos López",
+    "section": "Malaga Cf",
+    "category": "portero"
+  },
+  {
+    "id": "malaga-cf-5",
+    "code": "5",
+    "name": "Puga",
+    "section": "Malaga Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "malaga-cf-6",
+    "code": "6",
+    "name": "Murillo",
+    "section": "Malaga Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "malaga-cf-7",
+    "code": "7",
+    "name": null,
+    "section": "Malaga Cf",
+    "category": null
+  },
+  {
+    "id": "malaga-cf-8",
+    "code": "8",
+    "name": "Einar Galilea",
+    "section": "Malaga Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "malaga-cf-9",
+    "code": "9",
+    "name": "Rafita",
+    "section": "Malaga Cf",
+    "category": "defensa"
+  },
+  {
+    "id": "malaga-cf-10",
+    "code": "10",
+    "name": null,
+    "section": "Malaga Cf",
+    "category": null
+  },
+  {
+    "id": "malaga-cf-11",
+    "code": "11",
+    "name": "Izan Mérino",
+    "section": "Malaga Cf",
+    "category": "medio"
+  },
+  {
+    "id": "malaga-cf-12",
+    "code": "12",
+    "name": "Dani Lorenzo",
+    "section": "Malaga Cf",
+    "category": "medio"
+  },
+  {
+    "id": "malaga-cf-13a",
+    "code": "13A",
+    "name": "Rafa Rodríguez",
+    "section": "Malaga Cf",
+    "category": "medio"
+  },
+  {
+    "id": "malaga-cf-13b",
+    "code": "13B",
+    "name": "Juanpe",
+    "section": "Malaga Cf",
+    "category": "medio"
+  },
+  {
+    "id": "malaga-cf-14",
+    "code": "14",
+    "name": "Dotor",
+    "section": "Malaga Cf",
+    "category": "medio"
+  },
+  {
+    "id": "malaga-cf-15",
+    "code": "15",
+    "name": "Aarón Ochoa",
+    "section": "Malaga Cf",
+    "category": "medio"
+  },
+  {
+    "id": "malaga-cf-16",
+    "code": "16",
+    "name": "Larrubia",
+    "section": "Malaga Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "malaga-cf-17",
+    "code": "17",
+    "name": "Lobete",
+    "section": "Malaga Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "malaga-cf-18",
+    "code": "18",
+    "name": "Adrián Niño",
+    "section": "Malaga Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "malaga-cf-19",
+    "code": "19",
+    "name": "Joaquín",
+    "section": "Malaga Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "malaga-cf-20",
+    "code": "20",
+    "name": "Chupe",
+    "section": "Malaga Cf",
+    "category": "delantero"
+  },
+  {
+    "id": "osasuna-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Osasuna",
+    "category": null
+  },
+  {
+    "id": "osasuna-2",
+    "code": "2",
+    "name": "Luis Miguel Ramis",
+    "section": "Osasuna",
+    "category": "entrenador"
+  },
+  {
+    "id": "osasuna-3",
+    "code": "3",
+    "name": "Sergio Herrera",
+    "section": "Osasuna",
+    "category": "portero"
+  },
+  {
+    "id": "osasuna-4",
+    "code": "4",
+    "name": "Aitor Fernández",
+    "section": "Osasuna",
+    "category": "portero"
+  },
+  {
+    "id": "osasuna-5a",
+    "code": "5A",
+    "name": "Rosier",
+    "section": "Osasuna",
+    "category": "defensa"
+  },
+  {
+    "id": "osasuna-5b",
+    "code": "5B",
+    "name": "Arguibide",
+    "section": "Osasuna",
+    "category": "defensa"
+  },
+  {
+    "id": "osasuna-6",
+    "code": "6",
+    "name": "Boyomo",
+    "section": "Osasuna",
+    "category": "defensa"
+  },
+  {
+    "id": "osasuna-7",
+    "code": "7",
+    "name": "Herrando",
+    "section": "Osasuna",
+    "category": "defensa"
+  },
+  {
+    "id": "osasuna-8",
+    "code": "8",
+    "name": "Catena",
+    "section": "Osasuna",
+    "category": "defensa"
+  },
+  {
+    "id": "osasuna-9",
+    "code": "9",
+    "name": "Abel Bretones",
+    "section": "Osasuna",
+    "category": "defensa"
+  },
+  {
+    "id": "osasuna-10",
+    "code": "10",
+    "name": "Osambela",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-11",
+    "code": "11",
+    "name": "Torró",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-12",
+    "code": "12",
+    "name": "Moncayola",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-13a",
+    "code": "13A",
+    "name": "Moi Gómez",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-13b",
+    "code": "13B",
+    "name": "Iker Muñoz",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-14",
+    "code": "14",
+    "name": "Rubén García",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-15",
+    "code": "15",
+    "name": "Aimar Oroz",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-16",
+    "code": "16",
+    "name": "Iker Benito",
+    "section": "Osasuna",
+    "category": "medio"
+  },
+  {
+    "id": "osasuna-17",
+    "code": "17",
+    "name": "Raúl Moro",
+    "section": "Osasuna",
+    "category": "delantero"
+  },
+  {
+    "id": "osasuna-18",
+    "code": "18",
+    "name": "Raúl García",
+    "section": "Osasuna",
+    "category": "delantero"
+  },
+  {
+    "id": "osasuna-19",
+    "code": "19",
+    "name": "Kike Barja",
+    "section": "Osasuna",
+    "category": "delantero"
+  },
+  {
+    "id": "osasuna-20",
+    "code": "20",
+    "name": "Budimir",
+    "section": "Osasuna",
+    "category": "delantero"
+  },
+  {
+    "id": "racing-de-santander-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Racing De Santander",
+    "category": null
+  },
+  {
+    "id": "racing-de-santander-2",
+    "code": "2",
+    "name": "José Alberto López",
+    "section": "Racing De Santander",
+    "category": "entrenador"
+  },
+  {
+    "id": "racing-de-santander-3",
+    "code": "3",
+    "name": null,
+    "section": "Racing De Santander",
+    "category": null
+  },
+  {
+    "id": "racing-de-santander-4",
+    "code": "4",
+    "name": "Eriksson",
+    "section": "Racing De Santander",
+    "category": "portero"
+  },
+  {
+    "id": "racing-de-santander-5",
+    "code": "5",
+    "name": "Mantilla",
+    "section": "Racing De Santander",
+    "category": "defensa"
+  },
+  {
+    "id": "racing-de-santander-6",
+    "code": "6",
+    "name": "Sangalli",
+    "section": "Racing De Santander",
+    "category": "defensa"
+  },
+  {
+    "id": "racing-de-santander-7",
+    "code": "7",
+    "name": "Facu González",
+    "section": "Racing De Santander",
+    "category": "defensa"
+  },
+  {
+    "id": "racing-de-santander-8",
+    "code": "8",
+    "name": "Javi Castro",
+    "section": "Racing De Santander",
+    "category": "defensa"
+  },
+  {
+    "id": "racing-de-santander-9a",
+    "code": "9A",
+    "name": "Manu Hernando",
+    "section": "Racing De Santander",
+    "category": "defensa"
+  },
+  {
+    "id": "racing-de-santander-9b",
+    "code": "9B",
+    "name": "Mario García",
+    "section": "Racing De Santander",
+    "category": "defensa"
+  },
+  {
+    "id": "racing-de-santander-10",
+    "code": "10",
+    "name": "Jorge Salinas",
+    "section": "Racing De Santander",
+    "category": "defensa"
+  },
+  {
+    "id": "racing-de-santander-11a",
+    "code": "11A",
+    "name": "Maguette",
+    "section": "Racing De Santander",
+    "category": "medio"
+  },
+  {
+    "id": "racing-de-santander-11b",
+    "code": "11B",
+    "name": "Nteka",
+    "section": "Racing De Santander",
+    "category": "medio"
+  },
+  {
+    "id": "racing-de-santander-12",
+    "code": "12",
+    "name": "Gustavo Puerta",
+    "section": "Racing De Santander",
+    "category": "medio"
+  },
+  {
+    "id": "racing-de-santander-13",
+    "code": "13",
+    "name": "Íñigo",
+    "section": "Racing De Santander",
+    "category": "medio"
+  },
+  {
+    "id": "racing-de-santander-14",
+    "code": "14",
+    "name": "Aldasoro",
+    "section": "Racing De Santander",
+    "category": "medio"
+  },
+  {
+    "id": "racing-de-santander-15",
+    "code": "15",
+    "name": "Suleiman",
+    "section": "Racing De Santander",
+    "category": "delantero"
+  },
+  {
+    "id": "racing-de-santander-16",
+    "code": "16",
+    "name": "Andrés Martín",
+    "section": "Racing De Santander",
+    "category": "delantero"
+  },
+  {
+    "id": "racing-de-santander-17",
+    "code": "17",
+    "name": "Guliashvili",
+    "section": "Racing De Santander",
+    "category": "delantero"
+  },
+  {
+    "id": "racing-de-santander-18",
+    "code": "18",
+    "name": "Íñigo Vicente",
+    "section": "Racing De Santander",
+    "category": "delantero"
+  },
+  {
+    "id": "racing-de-santander-19",
+    "code": "19",
+    "name": "Arana",
+    "section": "Racing De Santander",
+    "category": "delantero"
+  },
+  {
+    "id": "racing-de-santander-20",
+    "code": "20",
+    "name": "Villalibre",
+    "section": "Racing De Santander",
+    "category": "delantero"
+  },
+  {
+    "id": "rayo-vallecano-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Rayo Vallecano",
+    "category": null
+  },
+  {
+    "id": "rayo-vallecano-2",
+    "code": "2",
+    "name": "Beñat San José",
+    "section": "Rayo Vallecano",
+    "category": "entrenador"
+  },
+  {
+    "id": "rayo-vallecano-3",
+    "code": "3",
+    "name": "Batalla",
+    "section": "Rayo Vallecano",
+    "category": "portero"
+  },
+  {
+    "id": "rayo-vallecano-4",
+    "code": "4",
+    "name": "Cárdenas",
+    "section": "Rayo Vallecano",
+    "category": "portero"
+  },
+  {
+    "id": "rayo-vallecano-5",
+    "code": "5",
+    "name": "Ratiu",
+    "section": "Rayo Vallecano",
+    "category": "defensa"
+  },
+  {
+    "id": "rayo-vallecano-6",
+    "code": "6",
+    "name": "Balliu",
+    "section": "Rayo Vallecano",
+    "category": "defensa"
+  },
+  {
+    "id": "rayo-vallecano-7",
+    "code": "7",
+    "name": "Nobel Mendy",
+    "section": "Rayo Vallecano",
+    "category": "defensa"
+  },
+  {
+    "id": "rayo-vallecano-8",
+    "code": "8",
+    "name": "Lejeune",
+    "section": "Rayo Vallecano",
+    "category": "defensa"
+  },
+  {
+    "id": "rayo-vallecano-9",
+    "code": "9",
+    "name": "Luiz Felipe",
+    "section": "Rayo Vallecano",
+    "category": "defensa"
+  },
+  {
+    "id": "rayo-vallecano-10",
+    "code": "10",
+    "name": "Pep Chavarría",
+    "section": "Rayo Vallecano",
+    "category": "defensa"
+  },
+  {
+    "id": "rayo-vallecano-11",
+    "code": "11",
+    "name": "Pedro Díaz",
+    "section": "Rayo Vallecano",
+    "category": "medio"
+  },
+  {
+    "id": "rayo-vallecano-12",
+    "code": "12",
+    "name": "Pathé Ciss",
+    "section": "Rayo Vallecano",
+    "category": "medio"
+  },
+  {
+    "id": "rayo-vallecano-13",
+    "code": "13",
+    "name": "Óscar Valentín",
+    "section": "Rayo Vallecano",
+    "category": "medio"
+  },
+  {
+    "id": "rayo-vallecano-14",
+    "code": "14",
+    "name": "Unai López",
+    "section": "Rayo Vallecano",
+    "category": "medio"
+  },
+  {
+    "id": "rayo-vallecano-15",
+    "code": "15",
+    "name": "Isi",
+    "section": "Rayo Vallecano",
+    "category": "medio"
+  },
+  {
+    "id": "rayo-vallecano-16",
+    "code": "16",
+    "name": "De Frutos",
+    "section": "Rayo Vallecano",
+    "category": "delantero"
+  },
+  {
+    "id": "rayo-vallecano-17",
+    "code": "17",
+    "name": "Fran Pérez",
+    "section": "Rayo Vallecano",
+    "category": "delantero"
+  },
+  {
+    "id": "rayo-vallecano-18",
+    "code": "18",
+    "name": "Álvaro García",
+    "section": "Rayo Vallecano",
+    "category": "delantero"
+  },
+  {
+    "id": "rayo-vallecano-19",
+    "code": "19",
+    "name": "Camello",
+    "section": "Rayo Vallecano",
+    "category": "delantero"
+  },
+  {
+    "id": "rayo-vallecano-20",
+    "code": "20",
+    "name": "Alemao",
+    "section": "Rayo Vallecano",
+    "category": "delantero"
+  },
+  {
+    "id": "real-sociedad-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Real Sociedad",
+    "category": null
+  },
+  {
+    "id": "real-sociedad-2",
+    "code": "2",
+    "name": "Pellegrino Matarazzo",
+    "section": "Real Sociedad",
+    "category": "entrenador"
+  },
+  {
+    "id": "real-sociedad-3",
+    "code": "3",
+    "name": "Remiro",
+    "section": "Real Sociedad",
+    "category": "portero"
+  },
+  {
+    "id": "real-sociedad-4",
+    "code": "4",
+    "name": "Marrero",
+    "section": "Real Sociedad",
+    "category": "portero"
+  },
+  {
+    "id": "real-sociedad-5",
+    "code": "5",
+    "name": "Aramburu",
+    "section": "Real Sociedad",
+    "category": "defensa"
+  },
+  {
+    "id": "real-sociedad-6",
+    "code": "6",
+    "name": "Zubeldia",
+    "section": "Real Sociedad",
+    "category": "defensa"
+  },
+  {
+    "id": "real-sociedad-7",
+    "code": "7",
+    "name": "Jon Martín",
+    "section": "Real Sociedad",
+    "category": "defensa"
+  },
+  {
+    "id": "real-sociedad-8",
+    "code": "8",
+    "name": "Sergio Gómez",
+    "section": "Real Sociedad",
+    "category": "defensa"
+  },
+  {
+    "id": "real-sociedad-9",
+    "code": "9",
+    "name": "Aihen Muñoz",
+    "section": "Real Sociedad",
+    "category": "defensa"
+  },
+  {
+    "id": "real-sociedad-10",
+    "code": "10",
+    "name": "Gorrotxategi",
+    "section": "Real Sociedad",
+    "category": "medio"
+  },
+  {
+    "id": "real-sociedad-11",
+    "code": "11",
+    "name": "Pablo Marín",
+    "section": "Real Sociedad",
+    "category": "medio"
+  },
+  {
+    "id": "real-sociedad-12",
+    "code": "12",
+    "name": "Turrientes",
+    "section": "Real Sociedad",
+    "category": "medio"
+  },
+  {
+    "id": "real-sociedad-13a",
+    "code": "13A",
+    "name": "Yangel Herrera",
+    "section": "Real Sociedad",
+    "category": "medio"
+  },
+  {
+    "id": "real-sociedad-13b",
+    "code": "13B",
+    "name": null,
+    "section": "Real Sociedad",
+    "category": null
+  },
+  {
+    "id": "real-sociedad-14",
+    "code": "14",
+    "name": "Carlos Soler",
+    "section": "Real Sociedad",
+    "category": "medio"
+  },
+  {
+    "id": "real-sociedad-15",
+    "code": "15",
+    "name": "Sucic",
+    "section": "Real Sociedad",
+    "category": "medio"
+  },
+  {
+    "id": "real-sociedad-16",
+    "code": "16",
+    "name": "Barrenetxea",
+    "section": "Real Sociedad",
+    "category": "delantero"
+  },
+  {
+    "id": "real-sociedad-17",
+    "code": "17",
+    "name": "Kubo",
+    "section": "Real Sociedad",
+    "category": "delantero"
+  },
+  {
+    "id": "real-sociedad-18",
+    "code": "18",
+    "name": "Guedes",
+    "section": "Real Sociedad",
+    "category": "delantero"
+  },
+  {
+    "id": "real-sociedad-19",
+    "code": "19",
+    "name": "Oskarsson",
+    "section": "Real Sociedad",
+    "category": "delantero"
+  },
+  {
+    "id": "real-sociedad-20",
+    "code": "20",
+    "name": "Oyarzabal",
+    "section": "Real Sociedad",
+    "category": "delantero"
+  },
+  {
+    "id": "sevilla-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Sevilla",
+    "category": null
+  },
+  {
+    "id": "sevilla-2",
+    "code": "2",
+    "name": "Luis García",
+    "section": "Sevilla",
+    "category": "entrenador"
+  },
+  {
+    "id": "sevilla-3",
+    "code": "3",
+    "name": "Vlachodimos",
+    "section": "Sevilla",
+    "category": "portero"
+  },
+  {
+    "id": "sevilla-4",
+    "code": "4",
+    "name": null,
+    "section": "Sevilla",
+    "category": null
+  },
+  {
+    "id": "sevilla-5",
+    "code": "5",
+    "name": "Carmona",
+    "section": "Sevilla",
+    "category": "defensa"
+  },
+  {
+    "id": "sevilla-6",
+    "code": "6",
+    "name": "Juanlu",
+    "section": "Sevilla",
+    "category": "defensa"
+  },
+  {
+    "id": "sevilla-7",
+    "code": "7",
+    "name": "Kike Salas",
+    "section": "Sevilla",
+    "category": "defensa"
+  },
+  {
+    "id": "sevilla-8",
+    "code": "8",
+    "name": "Nianzou",
+    "section": "Sevilla",
+    "category": "defensa"
+  },
+  {
+    "id": "sevilla-9a",
+    "code": "9A",
+    "name": "Castrín",
+    "section": "Sevilla",
+    "category": "defensa"
+  },
+  {
+    "id": "sevilla-9b",
+    "code": "9B",
+    "name": "Marcao",
+    "section": "Sevilla",
+    "category": "defensa"
+  },
+  {
+    "id": "sevilla-10",
+    "code": "10",
+    "name": "Suazo",
+    "section": "Sevilla",
+    "category": "defensa"
+  },
+  {
+    "id": "sevilla-11",
+    "code": "11",
+    "name": "Oso",
+    "section": "Sevilla",
+    "category": "medio"
+  },
+  {
+    "id": "sevilla-12",
+    "code": "12",
+    "name": "Agoumé",
+    "section": "Sevilla",
+    "category": "medio"
+  },
+  {
+    "id": "sevilla-13",
+    "code": "13",
+    "name": null,
+    "section": "Sevilla",
+    "category": null
+  },
+  {
+    "id": "sevilla-14",
+    "code": "14",
+    "name": "Sow",
+    "section": "Sevilla",
+    "category": "medio"
+  },
+  {
+    "id": "sevilla-15",
+    "code": "15",
+    "name": "Vargas",
+    "section": "Sevilla",
+    "category": "medio"
+  },
+  {
+    "id": "sevilla-16",
+    "code": "16",
+    "name": "Manu Bueno",
+    "section": "Sevilla",
+    "category": "medio"
+  },
+  {
+    "id": "sevilla-17",
+    "code": "17",
+    "name": "Peque",
+    "section": "Sevilla",
+    "category": "delantero"
+  },
+  {
+    "id": "sevilla-18",
+    "code": "18",
+    "name": "Ejuke",
+    "section": "Sevilla",
+    "category": "delantero"
+  },
+  {
+    "id": "sevilla-19",
+    "code": "19",
+    "name": "Akor Adams",
+    "section": "Sevilla",
+    "category": "delantero"
+  },
+  {
+    "id": "sevilla-20",
+    "code": "20",
+    "name": "Isaac Romero",
+    "section": "Sevilla",
+    "category": "delantero"
+  },
+  {
+    "id": "valencia-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Valencia",
+    "category": null
+  },
+  {
+    "id": "valencia-2",
+    "code": "2",
+    "name": "Carlos Corberán",
+    "section": "Valencia",
+    "category": "entrenador"
+  },
+  {
+    "id": "valencia-3",
+    "code": "3",
+    "name": "Dimitrievski",
+    "section": "Valencia",
+    "category": "portero"
+  },
+  {
+    "id": "valencia-4",
+    "code": "4",
+    "name": "Rivero",
+    "section": "Valencia",
+    "category": "portero"
+  },
+  {
+    "id": "valencia-5",
+    "code": "5",
+    "name": "Foulquier",
+    "section": "Valencia",
+    "category": "defensa"
+  },
+  {
+    "id": "valencia-6",
+    "code": "6",
+    "name": "Copete",
+    "section": "Valencia",
+    "category": "defensa"
+  },
+  {
+    "id": "valencia-7",
+    "code": "7",
+    "name": "Tárrega",
+    "section": "Valencia",
+    "category": "defensa"
+  },
+  {
+    "id": "valencia-8a",
+    "code": "8A",
+    "name": "Cömert",
+    "section": "Valencia",
+    "category": "defensa"
+  },
+  {
+    "id": "valencia-8b",
+    "code": "8B",
+    "name": "Diakhaby",
+    "section": "Valencia",
+    "category": "defensa"
+  },
+  {
+    "id": "valencia-9",
+    "code": "9",
+    "name": "Gayà",
+    "section": "Valencia",
+    "category": "defensa"
+  },
+  {
+    "id": "valencia-10",
+    "code": "10",
+    "name": "Jesús Vázquez",
+    "section": "Valencia",
+    "category": "defensa"
+  },
+  {
+    "id": "valencia-11",
+    "code": "11",
+    "name": "Pepelu",
+    "section": "Valencia",
+    "category": "medio"
+  },
+  {
+    "id": "valencia-12",
+    "code": "12",
+    "name": "Guido Rodríguez",
+    "section": "Valencia",
+    "category": "medio"
+  },
+  {
+    "id": "valencia-13",
+    "code": "13",
+    "name": "Javi Guerra",
+    "section": "Valencia",
+    "category": "medio"
+  },
+  {
+    "id": "valencia-14",
+    "code": "14",
+    "name": "Luis Rioja",
+    "section": "Valencia",
+    "category": "medio"
+  },
+  {
+    "id": "valencia-15",
+    "code": "15",
+    "name": "Ugrinic",
+    "section": "Valencia",
+    "category": "medio"
+  },
+  {
+    "id": "valencia-16",
+    "code": "16",
+    "name": "André Almeida",
+    "section": "Valencia",
+    "category": "medio"
+  },
+  {
+    "id": "valencia-17",
+    "code": "17",
+    "name": "Hugo Duro",
+    "section": "Valencia",
+    "category": "delantero"
+  },
+  {
+    "id": "valencia-18",
+    "code": "18",
+    "name": "Diego López",
+    "section": "Valencia",
+    "category": "delantero"
+  },
+  {
+    "id": "valencia-19",
+    "code": "19",
+    "name": "Ramazani",
+    "section": "Valencia",
+    "category": "delantero"
+  },
+  {
+    "id": "valencia-20a",
+    "code": "20A",
+    "name": "Sadiq",
+    "section": "Valencia",
+    "category": "delantero"
+  },
+  {
+    "id": "valencia-20b",
+    "code": "20B",
+    "name": "Lucas Beltrán",
+    "section": "Valencia",
+    "category": "delantero"
+  },
+  {
+    "id": "villarreal-1",
+    "code": "1",
+    "name": "Escudo",
+    "section": "Villarreal",
+    "category": null
+  },
+  {
+    "id": "villarreal-2",
+    "code": "2",
+    "name": "Íñigo Pérez",
+    "section": "Villarreal",
+    "category": "entrenador"
+  },
+  {
+    "id": "villarreal-3",
+    "code": "3",
+    "name": "Luiz Júnior",
+    "section": "Villarreal",
+    "category": "portero"
+  },
+  {
+    "id": "villarreal-4",
+    "code": "4",
+    "name": "Arnau Tenas",
+    "section": "Villarreal",
+    "category": "portero"
+  },
+  {
+    "id": "villarreal-5",
+    "code": "5",
+    "name": "Mouriño",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-6a",
+    "code": "6A",
+    "name": "Pau Navarro",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-6b",
+    "code": "6B",
+    "name": "Logan Costa",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-7a",
+    "code": "7A",
+    "name": "Foyth",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-7b",
+    "code": "7B",
+    "name": "Freeman",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-8a",
+    "code": "8A",
+    "name": "Kambwala",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-8b",
+    "code": "8B",
+    "name": "Rafa Marín",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-9",
+    "code": "9",
+    "name": "Renato Veiga",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-10",
+    "code": "10",
+    "name": "Sergi Cardona",
+    "section": "Villarreal",
+    "category": "defensa"
+  },
+  {
+    "id": "villarreal-11",
+    "code": "11",
+    "name": "Pape Gueye",
+    "section": "Villarreal",
+    "category": "medio"
+  },
+  {
+    "id": "villarreal-12",
+    "code": "12",
+    "name": "Santi Comesaña",
+    "section": "Villarreal",
+    "category": "medio"
+  },
+  {
+    "id": "villarreal-13",
+    "code": "13",
+    "name": "Maciá",
+    "section": "Villarreal",
+    "category": "medio"
+  },
+  {
+    "id": "villarreal-14",
+    "code": "14",
+    "name": "Moleiro",
+    "section": "Villarreal",
+    "category": "medio"
+  },
+  {
+    "id": "villarreal-15",
+    "code": "15",
+    "name": "Buchanan",
+    "section": "Villarreal",
+    "category": "delantero"
+  },
+  {
+    "id": "villarreal-16",
+    "code": "16",
+    "name": "Oluwaseyi",
+    "section": "Villarreal",
+    "category": "delantero"
+  },
+  {
+    "id": "villarreal-17",
+    "code": "17",
+    "name": "Ayoze",
+    "section": "Villarreal",
+    "category": "delantero"
+  },
+  {
+    "id": "villarreal-18",
+    "code": "18",
+    "name": "Pépé",
+    "section": "Villarreal",
+    "category": "delantero"
+  },
+  {
+    "id": "villarreal-19",
+    "code": "19",
+    "name": "Mikautadze",
+    "section": "Villarreal",
+    "category": "delantero"
+  },
+  {
+    "id": "villarreal-20",
+    "code": "20",
+    "name": "Gerard Moreno",
+    "section": "Villarreal",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-1",
+    "code": "1",
+    "name": "Antony (Betis)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-2",
+    "code": "2",
+    "name": "Bellingham (Real Madrid)",
+    "section": "Adn / Laliga Prime",
+    "category": "medio"
+  },
+  {
+    "id": "adn-laliga-prime-3",
+    "code": "3",
+    "name": "Courtois (Real Madrid)",
+    "section": "Adn / Laliga Prime",
+    "category": "portero"
+  },
+  {
+    "id": "adn-laliga-prime-4",
+    "code": "4",
+    "name": "Fermín (Barcelona)",
+    "section": "Adn / Laliga Prime",
+    "category": "medio"
+  },
+  {
+    "id": "adn-laliga-prime-5",
+    "code": "5",
+    "name": "Julián Alvarez (Atlético)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-6",
+    "code": "6",
+    "name": "Lamine Yamal (Barcelona)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-7",
+    "code": "7",
+    "name": "Lookman (Atlético)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-8",
+    "code": "8",
+    "name": "Mbappé (Real Madrid)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-9",
+    "code": "9",
+    "name": "Moleiro (Villarreal)",
+    "section": "Adn / Laliga Prime",
+    "category": "medio"
+  },
+  {
+    "id": "adn-laliga-prime-10",
+    "code": "10",
+    "name": "Nico Williams (Athletic)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-11",
+    "code": "11",
+    "name": "Oyarzabal (Real Sociedad)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-12",
+    "code": "12",
+    "name": "Pedri (Barcelona)",
+    "section": "Adn / Laliga Prime",
+    "category": "medio"
+  },
+  {
+    "id": "adn-laliga-prime-13",
+    "code": "13",
+    "name": "Raphinha (Barcelona)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "adn-laliga-prime-14",
+    "code": "14",
+    "name": "Unai Simón (Athletic)",
+    "section": "Adn / Laliga Prime",
+    "category": "portero"
+  },
+  {
+    "id": "adn-laliga-prime-15",
+    "code": "15",
+    "name": "Vinícius (Real Madrid)",
+    "section": "Adn / Laliga Prime",
+    "category": "delantero"
+  },
+  {
+    "id": "laliga-fantasy-1",
+    "code": "1",
+    "name": "Hansi Flick (Barcelona)",
+    "section": "Laliga Fantasy",
+    "category": "entrenador"
+  },
+  {
+    "id": "laliga-fantasy-2",
+    "code": "2",
+    "name": "Joan García (Barcelona)",
+    "section": "Laliga Fantasy",
+    "category": "portero"
+  },
+  {
+    "id": "laliga-fantasy-3",
+    "code": "3",
+    "name": "Lejeune (Rayo Vallecano)",
+    "section": "Laliga Fantasy",
+    "category": "defensa"
+  },
+  {
+    "id": "laliga-fantasy-4",
+    "code": "4",
+    "name": "Fornals (Betis)",
+    "section": "Laliga Fantasy",
+    "category": "medio"
+  },
+  {
+    "id": "laliga-fantasy-5",
+    "code": "5",
+    "name": "Lamine Yamal (Barcelona)",
+    "section": "Laliga Fantasy",
+    "category": "delantero"
+  },
+  {
+    "id": "laliga-fantasy-6",
+    "code": "6",
+    "name": "Luis Milla (Getafe)",
+    "section": "Laliga Fantasy",
+    "category": "medio"
+  },
+  {
+    "id": "laliga-fantasy-7",
+    "code": "7",
+    "name": "Pedri (Barcelona)",
+    "section": "Laliga Fantasy",
+    "category": "medio"
+  },
+  {
+    "id": "laliga-fantasy-8",
+    "code": "8",
+    "name": "Luis Milla (Getafe)",
+    "section": "Laliga Fantasy",
+    "category": "medio"
+  },
+  {
+    "id": "laliga-fantasy-9",
+    "code": "9",
+    "name": "Mbappé (Real Madrid)",
+    "section": "Laliga Fantasy",
+    "category": "delantero"
+  },
+  {
+    "id": "draft-23-1",
+    "code": "1",
+    "name": "Asencio (Real Madrid)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-2",
+    "code": "2",
+    "name": "Balde (Barcelona)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-3",
+    "code": "3",
+    "name": "Barrios (Atlético de Madrid)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-4",
+    "code": "4",
+    "name": "Carlos Espí (Levante)",
+    "section": "Draft 23",
+    "category": "delantero"
+  },
+  {
+    "id": "draft-23-5",
+    "code": "5",
+    "name": "Carreras (Real Madrid)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-6",
+    "code": "6",
+    "name": "Cubarsí (Barcelona)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-7",
+    "code": "7",
+    "name": "Fer López (Celta)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-8",
+    "code": "8",
+    "name": "Gavi (Barcelona)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-9",
+    "code": "9",
+    "name": "Gonzalo (Real Madrid)",
+    "section": "Draft 23",
+    "category": "delantero"
+  },
+  {
+    "id": "draft-23-10",
+    "code": "10",
+    "name": "Huijsen (Real Madrid)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-11",
+    "code": "11",
+    "name": "Jauregizar (Athletic)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-12",
+    "code": "12",
+    "name": "Javi Guerra (Valencia)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-13",
+    "code": "13",
+    "name": "Jon Martín (Real Sociedad)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-14",
+    "code": "14",
+    "name": "Juanlu (Sevilla)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-15",
+    "code": "15",
+    "name": "Marc Bernal (Barcelona)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-16",
+    "code": "16",
+    "name": "Mastantuono (Real Madrid)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-17",
+    "code": "17",
+    "name": "Oso (Sevilla)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-18",
+    "code": "18",
+    "name": "Pau Navarro (Villarreal)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-19",
+    "code": "19",
+    "name": "Pubill (Atlético de Madrid)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-20",
+    "code": "20",
+    "name": "Renato Veiga (Villarreal)",
+    "section": "Draft 23",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-21",
+    "code": "21",
+    "name": "Rodri Mendoza (Atlético de",
+    "section": "Draft 23",
+    "category": null
+  },
+  {
+    "id": "draft-23-22",
+    "code": "22",
+    "name": "Thiago Pitarch (Real Madrid)",
+    "section": "Draft 23",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-23",
+    "code": "23",
+    "name": "Yeremay (Deportivo)",
+    "section": "Draft 23",
+    "category": "delantero"
+  },
+  {
+    "id": "draft-23-kromix-k1",
+    "code": "K1",
+    "name": "Asencio (Real Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k2",
+    "code": "K2",
+    "name": "Balde (Barcelona)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k3",
+    "code": "K3",
+    "name": "Barrios (Atlético de Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k4",
+    "code": "K4",
+    "name": "Carlos Espí (Levante)",
+    "section": "Draft 23 Kromix",
+    "category": "delantero"
+  },
+  {
+    "id": "draft-23-kromix-k5",
+    "code": "K5",
+    "name": "Carreras (Real Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k6",
+    "code": "K6",
+    "name": "Cubarsí (Barcelona)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k7",
+    "code": "K7",
+    "name": "Fer López (Celta)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k8",
+    "code": "K8",
+    "name": "Gavi (Barcelona)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k9",
+    "code": "K9",
+    "name": "Gonzalo (Real Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "delantero"
+  },
+  {
+    "id": "draft-23-kromix-k10",
+    "code": "K10",
+    "name": "Huijsen (Real Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k11",
+    "code": "K11",
+    "name": "Jauregizar (Athletic)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k12",
+    "code": "K12",
+    "name": "Javi Guerra (Valencia)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k13",
+    "code": "K13",
+    "name": "Jon Martín (Real Sociedad)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k14",
+    "code": "K14",
+    "name": "Juanlu (Sevilla)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k15",
+    "code": "K15",
+    "name": "Marc Bernal (Barcelona)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k16",
+    "code": "K16",
+    "name": "Mastantuono (Real Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k17",
+    "code": "K17",
+    "name": "Oso (Sevilla)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k18",
+    "code": "K18",
+    "name": "Pau Navarro (Villarreal)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k19",
+    "code": "K19",
+    "name": "Pubill (Atlético de Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k20",
+    "code": "K20",
+    "name": "Renato Veiga (Villarreal)",
+    "section": "Draft 23 Kromix",
+    "category": "defensa"
+  },
+  {
+    "id": "draft-23-kromix-k21",
+    "code": "K21",
+    "name": "Rodri Mendoza (Atlético de",
+    "section": "Draft 23 Kromix",
+    "category": null
+  },
+  {
+    "id": "draft-23-kromix-k22",
+    "code": "K22",
+    "name": "Thiago Pitarch (Real Madrid)",
+    "section": "Draft 23 Kromix",
+    "category": "medio"
+  },
+  {
+    "id": "draft-23-kromix-k23",
+    "code": "K23",
+    "name": "Yeremay (Deportivo)",
+    "section": "Draft 23 Kromix",
+    "category": "delantero"
+  },
+  {
+    "id": "extra-sticker-bronce-extra-lamine-yamal-barcelona",
+    "code": "EXTRA",
+    "name": "Lamine Yamal (Barcelona)",
+    "section": "Extra Sticker Bronce",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-bronce-extra-mbappe-real-madrid",
+    "code": "EXTRA",
+    "name": "Mbappé (Real Madrid)",
+    "section": "Extra Sticker Bronce",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-bronce-extra-nico-williams-athletic",
+    "code": "EXTRA",
+    "name": "Nico Williams (Athletic)",
+    "section": "Extra Sticker Bronce",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-bronce-extra-pedri-barcelona",
+    "code": "EXTRA",
+    "name": "Pedri (Barcelona)",
+    "section": "Extra Sticker Bronce",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-bronce-extra-oblak-atletico-de-madrid",
+    "code": "EXTRA",
+    "name": "Oblak (Atlético de Madrid)",
+    "section": "Extra Sticker Bronce",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-plata-extra-lamine-yamal-barcelona",
+    "code": "EXTRA",
+    "name": "Lamine Yamal (Barcelona)",
+    "section": "Extra Sticker Plata",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-plata-extra-mbappe-real-madrid",
+    "code": "EXTRA",
+    "name": "Mbappé (Real Madrid)",
+    "section": "Extra Sticker Plata",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-plata-extra-nico-williams-athletic",
+    "code": "EXTRA",
+    "name": "Nico Williams (Athletic)",
+    "section": "Extra Sticker Plata",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-plata-extra-pedri-barcelona",
+    "code": "EXTRA",
+    "name": "Pedri (Barcelona)",
+    "section": "Extra Sticker Plata",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-plata-extra-oblak-atletico-de-madrid",
+    "code": "EXTRA",
+    "name": "Oblak (Atlético de Madrid)",
+    "section": "Extra Sticker Plata",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-oro-extra-lamine-yamal-barcelona",
+    "code": "EXTRA",
+    "name": "Lamine Yamal (Barcelona)",
+    "section": "Extra Sticker Oro",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-oro-extra-mbappe-real-madrid",
+    "code": "EXTRA",
+    "name": "Mbappé (Real Madrid)",
+    "section": "Extra Sticker Oro",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-oro-extra-nico-williams-athletic",
+    "code": "EXTRA",
+    "name": "Nico Williams (Athletic)",
+    "section": "Extra Sticker Oro",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-oro-extra-pedri-barcelona",
+    "code": "EXTRA",
+    "name": "Pedri (Barcelona)",
+    "section": "Extra Sticker Oro",
+    "category": null
+  },
+  {
+    "id": "extra-sticker-oro-extra-oblak-atletico-de-madrid",
+    "code": "EXTRA",
+    "name": "Oblak (Atlético de Madrid)",
+    "section": "Extra Sticker Oro",
+    "category": null
+  }
+]
