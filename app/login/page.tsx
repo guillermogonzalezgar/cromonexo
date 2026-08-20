@@ -33,10 +33,10 @@ export default function LoginPage() {
     router.push("/inicio"); router.refresh();
   };
 
-  return <main className="grid min-h-screen place-items-center bg-[#f5f2e9] px-4 py-10">
+  return <main className="grid min-h-[100svh] place-items-center bg-[#f5f2e9] px-3 py-5 sm:px-4 sm:py-10">
     <section className="w-full max-w-md overflow-hidden rounded-3xl border border-[#173d2a]/15 bg-white shadow-[0_24px_70px_rgba(23,35,27,.12)]">
-      <div className="bg-[#164f35] px-7 py-8 text-white"><div className="mb-7 flex items-center gap-2 text-xl font-black tracking-[-.04em]"><span className="grid h-10 w-10 rotate-[-5deg] place-items-center rounded-lg bg-[#c9f31d] text-[#164f35]">CN</span>CromoNexo</div><h1 className="text-3xl font-black tracking-[-.04em]">Tu próxima pieza está más cerca.</h1><p className="mt-2 text-sm text-white/70">Gestiona faltantes y repetidos en un solo lugar.</p></div>
-      <div className="p-7">
+      <div className="bg-[#164f35] px-5 py-6 text-white sm:px-7 sm:py-8"><div className="mb-5 flex items-center gap-2 text-xl font-black tracking-[-.04em] sm:mb-7"><span className="grid h-10 w-10 rotate-[-5deg] place-items-center rounded-lg bg-[#c9f31d] text-[#164f35]">CN</span>CromoNexo</div><h1 className="text-2xl font-black tracking-[-.04em] sm:text-3xl">Tu próxima pieza está más cerca.</h1><p className="mt-2 text-sm text-white/70">Gestiona faltantes y repetidos en un solo lugar.</p></div>
+      <div className="p-5 sm:p-7">
         <div className="mb-6 grid grid-cols-2 rounded-xl bg-[#f0eee7] p-1"><button onClick={() => { setMode("login"); setMessage(""); }} className={`rounded-lg py-2.5 text-sm font-bold ${mode === "login" ? "bg-white shadow-sm" : "text-[#6c786f]"}`}>Entrar</button><button onClick={() => { setMode("register"); setMessage(""); }} className={`rounded-lg py-2.5 text-sm font-bold ${mode === "register" ? "bg-white shadow-sm" : "text-[#6c786f]"}`}>Crear cuenta</button></div>
         <form onSubmit={submit} className="space-y-4">
           <label className="block text-sm font-bold">Correo electrónico<div className="mt-2 flex items-center gap-3 rounded-xl border border-[#173d2a]/20 px-3 focus-within:border-[#164f35]"><Mail size={18} className="text-[#718078]"/><input type="email" required autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="tu@email.com" className="w-full bg-transparent py-3 outline-none"/></div></label>
