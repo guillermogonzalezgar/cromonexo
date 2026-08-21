@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { ArrowRight, MapPin, Repeat2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import AppHeader from "@/components/app-header";
+import MatchSafetyActions from "./match-safety-actions";
 
 export const dynamic = "force-dynamic";
 
@@ -39,7 +40,7 @@ export default async function MatchesPage() {
         return <article key={match.matched_user_id} className="surface overflow-hidden rounded-3xl transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_45px_rgba(23,35,27,.1)]">
           <div className="flex flex-col justify-between gap-4 border-b border-[#173d2a]/10 p-5 sm:flex-row sm:items-center"><div className="flex items-center gap-3"><div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#e6f1db] font-black text-[#164f35]">{index+1}</div><div><p className="text-[10px] font-black uppercase tracking-[.15em] text-[#718078]">Match {index+1}</p><div className="mt-1 flex flex-wrap items-center gap-2"><h2 className="font-black">{name}</h2>{index === 0 && <span className="rounded-full bg-[#c9f31d] px-2 py-1 text-[10px] font-black uppercase">Mejor match</span>}</div>{match.city && <p className="mt-1 flex items-center gap-1 text-xs text-[#718078]"><MapPin size={13}/>{match.city}</p>}</div></div><div className="rounded-xl bg-[#17231b] px-4 py-2 text-center text-white"><strong className="block text-xl">{match.compatibility_score}</strong><span className="text-[10px] font-bold uppercase tracking-wider text-white/65">Cromos compatibles</span></div></div>
           <div className="grid md:grid-cols-2"><TradeSide title={`Recibes · ${match.receive_count}`} tone="receive" stickers={receives}/><TradeSide title={`Entregas · ${match.give_count}`} tone="give" stickers={gives}/></div>
-          <div className="border-t border-[#173d2a]/10 p-4 text-right"><Link href={`/propuestas/nueva?usuario=${match.matched_user_id}`} className="inline-flex items-center gap-2 rounded-xl bg-[#164f35] px-5 py-3 text-sm font-bold text-white">Proponer intercambio<ArrowRight size={17}/></Link></div>
+          <div className="flex items-center justify-between gap-3 border-t border-[#173d2a]/10 p-4"><MatchSafetyActions userId={match.matched_user_id}/><Link href={`/propuestas/nueva?usuario=${match.matched_user_id}`} className="inline-flex items-center gap-2 rounded-xl bg-[#164f35] px-5 py-3 text-sm font-bold text-white">Proponer intercambio<ArrowRight size={17}/></Link></div>
         </article>;
       })}</div> : <div className="rounded-2xl border border-dashed border-[#173d2a]/25 bg-white/50 px-6 py-16 text-center"><Repeat2 className="mx-auto mb-4 text-[#789083]" size={36}/><h2 className="text-xl font-black">Todavía no hay matches</h2><p className="mx-auto mt-2 max-w-md text-sm text-[#65756b]">Necesitamos otra cuenta con faltantes y repetidos compatibles. Añade más cromos o prueba con un segundo usuario.</p><Link href="/mi-coleccion" className="mt-5 inline-flex rounded-xl bg-[#164f35] px-5 py-3 text-sm font-bold text-white">Volver a mi colección</Link></div>}
     </main>

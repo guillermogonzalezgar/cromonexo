@@ -25,5 +25,5 @@ export default async function CollectionPage() {
     return { id: item.id, code: item.number, name: item.name, section: item.team, category: item.category, status: saved?.status ?? null, quantity: saved?.quantity };
   });
 
-  return <CollectionClient initialStickers={stickers} userId={user.id} userEmail={user.email ?? "usuario"} collectionName={collection.name} />;
+  return <CollectionClient initialStickers={stickers} userId={user.id} collectionName={collection.name} />;
 }

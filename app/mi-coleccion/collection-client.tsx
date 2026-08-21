@@ -1,16 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
-import { Album, ChevronDown, Grid2X2, List, Plus, Repeat2, Search, Store, UserRound } from "lucide-react";
+import { Album, ChevronDown, Grid2X2, List, Plus, Search } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import BrandLogo from "@/components/brand-logo";
+import AppHeader from "@/components/app-header";
 
 type Status = "wanted" | "duplicate" | null;
 export type Sticker = { id: string; code: string; name: string | null; section: string; category: string | null; status: Status; quantity?: number };
 const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
 
-export default function CollectionClient({ initialStickers, userId, userEmail, collectionName }: { initialStickers: Sticker[]; userId: string; userEmail: string; collectionName: string }) {
+export default function CollectionClient({ initialStickers, userId, collectionName }: { initialStickers: Sticker[]; userId: string; collectionName: string }) {
   const supabase = useMemo(() => createClient(), []);
   const [stickers, setStickers] = useState(initialStickers);
   const sections = useMemo(() => [...new Set(initialStickers.map(sticker => sticker.section))], [initialStickers]);
@@ -51,14 +50,8 @@ export default function CollectionClient({ initialStickers, userId, userEmail, c
     if (!missing.length) setBulkNumbers("");
   };
 
-  return <div className="min-h-screen bg-[#f5f2e9] pb-24 md:pb-8">
-    <header className="border-b border-[#173d2a]/15 bg-[#f5f2e9]/95 px-4 py-4 backdrop-blur md:px-8">
-      <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <div className="flex items-center gap-2 text-xl font-black tracking-[-.04em]"><BrandLogo/>CromoNexo</div>
-        <nav className="hidden items-center gap-7 text-sm font-semibold md:flex"><Link className="border-b-2 border-[#164f35] py-3" href="/mi-coleccion">Mi colección</Link><Link href="/mis-matches">Mis matches</Link><Link href="/mercado">Mercado</Link></nav>
-        <Link href="/perfil" aria-label={`Abrir perfil de ${userEmail}`} title="Perfil" className="grid h-10 w-10 place-items-center rounded-full bg-[#164f35] text-white"><UserRound size={19}/></Link>
-      </div>
-    </header>
+  return <div className="min-h-screen pb-24 md:pb-12">
+    <AppHeader active="collection"/>
 
     <main className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-12">
       <div className="mb-7 flex flex-col justify-between gap-5 md:flex-row md:items-end">
@@ -94,9 +87,7 @@ export default function CollectionClient({ initialStickers, userId, userEmail, c
       </section>
       {!visible.length && <div className="rounded-2xl border border-dashed border-[#173d2a]/25 bg-white/50 px-6 py-14 text-center"><Album className="mx-auto mb-3 text-[#789083]"/><h2 className="text-lg font-black">Todavía no has marcado ningún cromo</h2><p className="mt-1 text-sm text-[#65756b]">Usa “Añadir varios cromos” para registrar tus faltantes o repetidos.</p></div>}
     </main>
-    <nav className="collection-mobile-nav fixed inset-x-0 bottom-0 z-20 grid grid-cols-4 border-t border-[#173d2a]/15 bg-white px-3 pt-2 md:hidden"><MobileNav active icon={<Album/>} label="Colección"/><Link href="/mis-matches"><MobileNav icon={<Repeat2/>} label="Matches"/></Link><Link href="/mercado"><MobileNav icon={<Store/>} label="Mercado"/></Link><Link href="/perfil"><MobileNav icon={<UserRound/>} label="Perfil"/></Link></nav>
   </div>;
 }
 
 function Stat({value,label}:{value:number,label:string}) { return <div className="border-r border-[#173d2a]/10 px-2 py-4 last:border-0"><strong className="block text-2xl font-black">{value}</strong><span className="text-xs font-semibold text-[#6e7d74]">{label}</span></div> }
-function MobileNav({icon,label,active=false}:{icon:React.ReactNode,label:string,active?:boolean}) { return <button className={`flex flex-col items-center gap-1 text-[10px] font-bold ${active?'text-[#164f35]':'text-[#819087]'}`}><span className="[&>svg]:h-5 [&>svg]:w-5">{icon}</span>{label}</button> }

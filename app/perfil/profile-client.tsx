@@ -2,7 +2,8 @@
 
 import { useMemo, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Check, LogOut, MapPin, UserRound } from "lucide-react";
+import Link from "next/link";
+import { Check, CircleHelp, LogOut, MapPin, MessageSquareText, Trash2, UserRound } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import AppHeader from "@/components/app-header";
 
@@ -14,6 +15,9 @@ export default function ProfileClient({ userId, email, initialProfile }: { userI
   const [profile, setProfile] = useState(initialProfile);
   const [message, setMessage] = useState("");
   const [saving, setSaving] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+  const [deleteConfirmation, setDeleteConfirmation] = useState("");
+  const [deleting, setDeleting] = useState(false);
 
   const save = async (event: FormEvent) => {
     event.preventDefault(); setSaving(true); setMessage("");
@@ -26,6 +30,13 @@ export default function ProfileClient({ userId, email, initialProfile }: { userI
     else { setProfile(current => ({ ...current, username })); setMessage("Perfil guardado correctamente."); router.refresh(); }
   };
   const signOut = async () => { await supabase.auth.signOut(); router.push("/login"); router.refresh(); };
+  const deleteAccount = async () => {
+    if (deleteConfirmation !== "ELIMINAR") return;
+    setDeleting(true); setMessage("");
+    const { error } = await supabase.rpc("delete_my_account");
+    if (error) { setDeleting(false); setMessage("No se pudo eliminar la cuenta. Inténtalo de nuevo o contacta con nosotros."); return; }
+    await supabase.auth.signOut(); router.push("/"); router.refresh();
+  };
 
   return <div className="min-h-screen pb-24 md:pb-12">
     <AppHeader active="profile"/>
@@ -43,7 +54,7 @@ export default function ProfileClient({ userId, email, initialProfile }: { userI
           <button disabled={saving} className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#164f35] px-5 py-3.5 font-bold text-white shadow-[0_5px_0_#0d3624] active:translate-y-1 active:shadow-none disabled:opacity-50"><Check size={18}/>{saving ? "Guardando…" : "Guardar perfil"}</button>
           {message && <p role="status" className="mt-4 rounded-xl bg-[#f0eee7] px-4 py-3 text-sm font-semibold">{message}</p>}
         </form>
-        <aside className="h-fit rounded-2xl border border-[#173d2a]/15 bg-white p-5"><h2 className="font-black">Cuenta</h2><p className="mt-2 text-sm text-[#65756b]">Tu sesión está protegida por Supabase Auth.</p><button onClick={signOut} className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-[#173d2a]/20 px-4 py-3 text-sm font-bold"><LogOut size={17}/>Cerrar sesión</button><div className="mt-5 border-t border-[#173d2a]/10 pt-5"><p className="text-xs text-[#718078]">La eliminación de cuenta y descarga de datos se añadirá antes de abrir la beta.</p></div></aside>
+        <aside className="h-fit rounded-2xl border border-[#173d2a]/15 bg-white p-5"><h2 className="font-black">Cuenta</h2><p className="mt-2 text-sm text-[#65756b]">Tu sesión está protegida por Supabase Auth.</p><div className="mt-5 space-y-2"><Link href="/ayuda" className="flex w-full items-center gap-2 rounded-xl border border-[#173d2a]/15 px-4 py-3 text-sm font-bold"><CircleHelp size={17}/>Centro de ayuda</Link><Link href="/contacto" className="flex w-full items-center gap-2 rounded-xl border border-[#173d2a]/15 px-4 py-3 text-sm font-bold"><MessageSquareText size={17}/>Enviar sugerencia</Link><button onClick={signOut} className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#173d2a]/20 px-4 py-3 text-sm font-bold"><LogOut size={17}/>Cerrar sesión</button></div><div className="mt-5 border-t border-[#173d2a]/10 pt-5">{!deleteOpen?<button onClick={()=>setDeleteOpen(true)} className="flex items-center gap-2 text-xs font-bold text-[#a53f27]"><Trash2 size={15}/>Eliminar mi cuenta</button>:<div className="rounded-xl bg-[#fff0e8] p-3"><p className="text-xs font-black text-[#80391d]">Esta acción elimina definitivamente tu perfil, colección, propuestas y anuncios.</p><label className="mt-3 block text-xs font-bold">Escribe ELIMINAR<input value={deleteConfirmation} onChange={event=>setDeleteConfirmation(event.target.value)} className="mt-1 w-full rounded-lg border border-[#80391d]/20 bg-white px-3 py-2 outline-none"/></label><div className="mt-2 flex gap-2"><button onClick={deleteAccount} disabled={deleteConfirmation!=="ELIMINAR"||deleting} className="flex-1 rounded-lg bg-[#a53f27] px-3 py-2 text-xs font-bold text-white disabled:opacity-40">{deleting?"Eliminando…":"Eliminar definitivamente"}</button><button onClick={()=>{setDeleteOpen(false);setDeleteConfirmation("")}} className="rounded-lg border border-[#173d2a]/15 bg-white px-3 py-2 text-xs font-bold">Cancelar</button></div></div>}</div></aside>
       </div>
     </main>
   </div>;
