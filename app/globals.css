@@ -23,7 +23,14 @@ body {
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
 ::selection { background: #c9f31d; color: #17231b; }
-h1, h2, h3, button, nav a { text-transform: lowercase; }
+h1, h2, h3, button, nav a { text-transform: uppercase; }
+
+.landing-primary-action,
+.landing-secondary-action,
+.landing-nav-cta,
+.landing-final-cta a {
+  text-transform: uppercase;
+}
 
 .app-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #e1e4e1; background: rgba(255,255,255,.9); backdrop-filter: blur(20px); }
 .brand-mark { display: grid; height: 2.35rem; width: 2.35rem; place-items: center; border-radius: .75rem; background: #c9f31d; color: #164f35; font-size: .78rem; box-shadow: 0 5px 15px rgba(71,91,16,.18); transform: rotate(-5deg); }
