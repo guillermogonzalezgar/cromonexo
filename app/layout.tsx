@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CromoNexo — Tu colección, más cerca de completarse",
-  description: "Gestiona tus cromos y encuentra intercambios compatibles.",
+  title: "CromoNexo — coleccionar, sin complicaciones",
+  description: "Organiza tus cromos, encuentra intercambios compatibles y compra o vende con otros coleccionistas.",
   icons: { icon: "/social/foto-perfil-cromonexo.png", apple: "/social/foto-perfil-cromonexo.png" },
 };
 
