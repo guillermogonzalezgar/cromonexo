@@ -125,7 +125,9 @@ language sql stable security definer set search_path = '' as $$
   group by items.matched_user_id, profile.username, profile.display_name, profile.city
   having count(distinct items.sticker_id) filter (where items.direction = 'receive') > 0
      and count(distinct items.sticker_id) filter (where items.direction = 'give') > 0
-  order by compatibility_score desc, receive_count desc, give_count desc;
+  -- PostgreSQL no siempre resuelve los alias de columnas de retorno de una
+  -- función SQL dentro de ORDER BY. Ordenamos por su posición en el resultado.
+  order by 9 desc, 7 desc, 8 desc;
 $$;
 
 revoke all on function public.get_user_matches(uuid) from public, anon;
