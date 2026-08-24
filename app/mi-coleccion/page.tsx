@@ -28,5 +28,5 @@ export default async function CollectionPage({ searchParams }: { searchParams: P
     return { id: item.id, code: item.number, name: item.name, section: item.team, category: item.category, status: saved?.status ?? null, quantity: saved?.quantity };
   });
 
-  return <CollectionClient initialStickers={stickers} userId={user.id} collectionName={collection.name} collectionSlug={collection.slug} collections={(collections ?? []).map(({ slug, name }) => ({ slug, name }))} />;
+  return <CollectionClient key={collection.id} initialStickers={stickers} userId={user.id} collectionName={collection.name} collectionSlug={collection.slug} collections={(collections ?? []).map(({ slug, name }) => ({ slug, name }))} />;
 }

@@ -38,6 +38,17 @@ export default function CollectionClient({ initialStickers, userId, collectionNa
       setSaveMessage("No se pudo guardar. Inténtalo de nuevo.");
     } else setSaveMessage("Guardado");
   };
+  const clearStatus = async (id: string) => {
+    const previous = stickers.find(sticker => sticker.id === id);
+    if (!previous?.status) return;
+    setSaveMessage("Guardando…");
+    setStickers(list => list.map(sticker => sticker.id === id ? { ...sticker, status: null, quantity: undefined } : sticker));
+    const { error } = await supabase.from("user_stickers").delete().eq("user_id", userId).eq("sticker_id", id);
+    if (error) {
+      setStickers(list => list.map(sticker => sticker.id === id ? previous : sticker));
+      setSaveMessage("No se pudo desmarcar. Inténtalo de nuevo.");
+    } else setSaveMessage("Cromo desmarcado");
+  };
   const addMany = async () => {
     const terms = [...new Set(bulkNumbers.split(/[,;\n]+/).map(normalize).filter(Boolean))];
     const matches = stickers.filter(s => s.section === bulkSection && terms.some(term => normalize(s.code) === term || (s.name && normalize(s.name) === term)));
@@ -83,7 +94,7 @@ export default function CollectionClient({ initialStickers, userId, collectionNa
       <section className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
         {visible.map(sticker => <article key={sticker.id} className="group overflow-hidden rounded-2xl border border-[#173d2a]/15 bg-white transition hover:-translate-y-1 hover:shadow-lg">
           <div className="relative grid aspect-[4/3] place-items-center bg-[linear-gradient(135deg,#e9eee5,#f9f8f3)]"><span className="absolute left-3 top-3 rounded-md bg-white px-2 py-1 font-mono text-xs font-bold shadow-sm">#{sticker.code}</span><div className="grid h-16 w-16 place-items-center rounded-full border-2 border-dashed border-[#164f35]/25 text-2xl font-black text-[#164f35]/30">CN</div>{sticker.quantity && <span className="absolute right-3 top-3 rounded-full bg-[#ff6a3d] px-2 py-1 text-xs font-black text-white">×{sticker.quantity}</span>}</div>
-          <div className="p-3"><p className="truncate font-bold">{sticker.name ?? `Cromo ${sticker.code}`}</p><p className="mb-3 truncate text-xs text-[#708078]">{sticker.section}</p><div className="flex gap-1"><button onClick={()=>toggle(sticker.id,"wanted")} aria-label="Marcar como me falta" className={`flex-1 rounded-lg py-2 text-[11px] font-bold ${sticker.status==='wanted'?'bg-[#ff6a3d] text-white':'bg-[#f0eee7] text-[#7b776f]'}`}>Me falta</button><button onClick={()=>toggle(sticker.id,"duplicate")} aria-label="Marcar como repetido" className={`flex-1 rounded-lg py-2 text-[11px] font-bold ${sticker.status==='duplicate'?'bg-[#c9f31d] text-[#17231b]':'bg-[#f0eee7] text-[#7b776f]'}`}>Repetido</button></div></div>
+          <div className="p-3"><p className="truncate font-bold">{sticker.name ?? `Cromo ${sticker.code}`}</p><p className="mb-3 truncate text-xs text-[#708078]">{sticker.section}</p><div className="flex gap-1"><button onClick={()=>toggle(sticker.id,"wanted")} aria-label="Marcar como me falta" className={`flex-1 rounded-lg py-2 text-[11px] font-bold ${sticker.status==='wanted'?'bg-[#ff6a3d] text-white':'bg-[#f0eee7] text-[#7b776f]'}`}>Me falta</button><button onClick={()=>toggle(sticker.id,"duplicate")} aria-label="Marcar como repetido" className={`flex-1 rounded-lg py-2 text-[11px] font-bold ${sticker.status==='duplicate'?'bg-[#c9f31d] text-[#17231b]':'bg-[#f0eee7] text-[#7b776f]'}`}>Repetido</button></div>{sticker.status&&<button onClick={()=>clearStatus(sticker.id)} className="mt-2 w-full rounded-lg border border-[#173d2a]/15 py-2 text-[11px] font-bold text-[#65756b] hover:bg-[#f0eee7]">Desmarcar</button>}</div>
         </article>)}
       </section>
       {!visible.length && <div className="rounded-2xl border border-dashed border-[#173d2a]/25 bg-white/50 px-6 py-14 text-center"><Album className="mx-auto mb-3 text-[#789083]"/><h2 className="text-lg font-black">Todavía no has marcado ningún cromo</h2><p className="mt-1 text-sm text-[#65756b]">Usa “Añadir varios cromos” para registrar tus faltantes o repetidos.</p></div>}
