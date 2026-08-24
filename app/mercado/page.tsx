@@ -20,7 +20,7 @@ export default async function MarketPage({ searchParams }: { searchParams: Promi
   if (!collection) throw new Error("No hay ninguna colección disponible.");
 
   const [{ data: listingRows }, { data: catalog }] = await Promise.all([
-    supabase.from("market_listings").select("id,seller_id,price_cents,status,created_at,seller:profiles(display_name,username,city),sticker:stickers(id,number,name,team,collection_id)").eq("status", "active").order("created_at", { ascending: false }),
+    supabase.from("market_listings").select("id,seller_id,price_cents,status,created_at,verification_id,seller:profiles(display_name,username,city),sticker:stickers(id,number,name,team,collection_id)").eq("status", "active").order("created_at", { ascending: false }),
     supabase.from("stickers").select("id,number,name,team").eq("collection_id", collection.id),
   ]);
   const listings = (listingRows ?? []).filter(listing => {
