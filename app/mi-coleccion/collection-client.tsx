@@ -1,15 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Album, ChevronDown, Grid2X2, List, Plus, Search } from "lucide-react";
+import { Album, Grid2X2, List, Plus, Search } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import AppHeader from "@/components/app-header";
+import CollectionSelector, { type CollectionOption } from "@/components/collection-selector";
 
 type Status = "wanted" | "duplicate" | null;
 export type Sticker = { id: string; code: string; name: string | null; section: string; category: string | null; status: Status; quantity?: number };
 const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
 
-export default function CollectionClient({ initialStickers, userId, collectionName }: { initialStickers: Sticker[]; userId: string; collectionName: string }) {
+export default function CollectionClient({ initialStickers, userId, collectionName, collectionSlug, collections }: { initialStickers: Sticker[]; userId: string; collectionName: string; collectionSlug: string; collections: CollectionOption[] }) {
   const supabase = useMemo(() => createClient(), []);
   const [stickers, setStickers] = useState(initialStickers);
   const sections = useMemo(() => [...new Set(initialStickers.map(sticker => sticker.section))], [initialStickers]);
@@ -69,7 +70,7 @@ export default function CollectionClient({ initialStickers, userId, collectionNa
       </section>}
 
       <section className="mb-6 overflow-hidden rounded-2xl border border-[#173d2a]/15 bg-white">
-        <div className="flex items-center justify-between gap-4 p-4 md:p-5"><div className="flex items-center gap-3"><div className="grid h-12 w-12 place-items-center rounded-xl bg-[#e6f1db] text-[#164f35]"><Album/></div><div><p className="text-xs font-bold uppercase tracking-wider text-[#6e8075]">Colección activa · {stickers.length} cromos</p><h2 className="font-extrabold">{collectionName}</h2></div></div><button aria-label="Cambiar colección" className="rounded-lg border border-[#173d2a]/15 p-2"><ChevronDown size={18}/></button></div>
+        <div className="grid gap-4 p-4 md:grid-cols-[1fr_20rem] md:items-end md:p-5"><div className="flex items-center gap-3"><div className="grid h-12 w-12 place-items-center rounded-xl bg-[#e6f1db] text-[#164f35]"><Album/></div><div><p className="text-xs font-bold uppercase tracking-wider text-[#6e8075]">{stickers.length} cromos disponibles</p><h2 className="font-extrabold">{collectionName}</h2></div></div><CollectionSelector collections={collections} value={collectionSlug}/></div>
         <div className="grid grid-cols-2 border-t border-[#173d2a]/10 bg-[#fbfaf5] text-center"><Stat value={counts("wanted")} label="Me faltan"/><Stat value={counts("duplicate")} label="Repetidos"/></div>
       </section>
 

@@ -5,13 +5,16 @@ import { sortByChecklist } from "@/lib/sticker-order";
 
 export const dynamic = "force-dynamic";
 
-export default async function CollectionPage() {
+export default async function CollectionPage({ searchParams }: { searchParams: Promise<{ coleccion?: string }> }) {
+  const { coleccion } = await searchParams;
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  const { data: collection } = await supabase.from("collections").select("id, name").eq("slug", "laliga-este-2026-27").single();
-  if (!collection) throw new Error("La colección LaLiga ESTE 2026/27 no está disponible.");
+  const { data: collections } = await supabase.from("collections").select("id, slug, name").eq("is_active", true).order("created_at");
+  const selectedSlug = collections?.some(item => item.slug === coleccion) ? coleccion! : "laliga-este-2026-27";
+  const collection = collections?.find(item => item.slug === selectedSlug) ?? collections?.[0];
+  if (!collection) throw new Error("No hay ninguna colección disponible.");
 
   const [{ data: catalog, error: catalogError }, { data: userStickers, error: userError }] = await Promise.all([
     supabase.from("stickers").select("id, number, name, team, category").eq("collection_id", collection.id),
@@ -25,5 +28,5 @@ export default async function CollectionPage() {
     return { id: item.id, code: item.number, name: item.name, section: item.team, category: item.category, status: saved?.status ?? null, quantity: saved?.quantity };
   });
 
-  return <CollectionClient initialStickers={stickers} userId={user.id} collectionName={collection.name} />;
+  return <CollectionClient initialStickers={stickers} userId={user.id} collectionName={collection.name} collectionSlug={collection.slug} collections={(collections ?? []).map(({ slug, name }) => ({ slug, name }))} />;
 }
