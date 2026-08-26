@@ -15,6 +15,15 @@ type Verification = { id:string; code:string; expiresAt:string };
 type PhotoKind = "front"|"back"|"proof";
 
 const one = <T,>(value:Relation<T>) => Array.isArray(value) ? value[0] ?? null : value;
+const readableError = (error: unknown) => {
+  const message = error instanceof Error ? error.message : typeof error === "object" && error && "message" in error ? String(error.message) : "";
+  if (message.includes("authentication required")) return "Tu sesión ha caducado. Inicia sesión otra vez.";
+  if (message.includes("invalid sticker")) return "Ese cromo ya no está disponible en la colección activa.";
+  if (message.includes("expired")) return "El código ha caducado. Genera uno nuevo.";
+  if (message.includes("photos missing")) return "No se han recibido correctamente las tres fotografías.";
+  if (message.toLowerCase().includes("row-level security")) return "Supabase ha bloqueado la subida. Vuelve a iniciar sesión e inténtalo otra vez.";
+  return message ? `No se pudo completar la comprobación: ${message}` : "No se pudo completar la comprobación. Inténtalo otra vez.";
+};
 
 export default function MarketClient({ userId, listings, availableStickers }:{ userId:string; listings:L[]; availableStickers:S[] }) {
   const supabase = useMemo(() => createClient(), []);
@@ -40,7 +49,7 @@ export default function MarketClient({ userId, listings, availableStickers }:{ u
     setLoading(true); setMessage("");
     const { data,error } = await supabase.rpc("start_listing_verification", { p_sticker_id:sticker });
     const row = (data as VerificationRow[]|null)?.[0];
-    if (error || !row) setMessage("No se pudo generar el código. Inténtalo de nuevo.");
+    if (error || !row) setMessage(error ? readableError(error) : "Supabase no devolvió ningún código. Inténtalo de nuevo.");
     else { setVerification({id:row.verification_id,code:row.verification_code,expiresAt:row.expires_at}); setPhotos({}); }
     setLoading(false);
   };
@@ -79,7 +88,7 @@ export default function MarketClient({ userId, listings, availableStickers }:{ u
       });
       if (listingError) throw listingError;
       setMessage("Anuncio publicado con prueba fotográfica."); setOpen(false); resetVerification(); router.refresh();
-    } catch { setMessage("No se pudo completar la comprobación. Revisa las fotos o genera un código nuevo."); }
+    } catch (error) { setMessage(readableError(error)); }
     finally { setLoading(false); }
   };
   const request = async (id:string) => {
