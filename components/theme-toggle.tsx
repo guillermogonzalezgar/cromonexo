@@ -1,4 +1,26 @@
 "use client";
-import {useEffect,useState} from "react";
-import {Moon,Sun} from "lucide-react";
-export default function ThemeToggle(){const[dark,setDark]=useState(false);useEffect(()=>{const saved=localStorage.getItem("cromonexo-theme")==="dark";setDark(saved);document.documentElement.classList.toggle("dark",saved)},[]);const toggle=()=>{const next=!dark;setDark(next);document.documentElement.classList.toggle("dark",next);localStorage.setItem("cromonexo-theme",next?"dark":"light")};return <button onClick={toggle} aria-label={dark?"Activar modo claro":"Activar modo oscuro"} title={dark?"Modo claro":"Modo oscuro"} className="grid h-10 w-10 place-items-center rounded-full border border-[#dfe3df] bg-white text-[#555b57] transition hover:rotate-6 hover:bg-[#f1f3f0]">{dark?<Sun size={18}/>:<Moon size={18}/>}</button>}
+
+import { Moon, Sun } from "lucide-react";
+
+export default function ThemeToggle() {
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    const nextTheme = root.classList.contains("dark") ? "light" : "dark";
+
+    root.classList.toggle("dark", nextTheme === "dark");
+    localStorage.setItem("cromonexo-theme", nextTheme);
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label="Cambiar entre modo claro y oscuro"
+      title="Cambiar tema"
+      className="grid h-10 w-10 place-items-center rounded-full border border-[#dfe3df] bg-white text-[#555b57] transition hover:rotate-6 hover:bg-[#f1f3f0]"
+    >
+      <Moon className="dark:hidden" size={18} />
+      <Sun className="hidden dark:block" size={18} />
+    </button>
+  );
+}
