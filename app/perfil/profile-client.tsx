@@ -3,13 +3,13 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Check, CircleHelp, LogOut, MapPin, MessageSquareText, Trash2, UserRound } from "lucide-react";
+import { Check, CircleHelp, LogOut, MapPin, MessageSquareText, ShieldCheck, Sparkles, Trash2, UserRound } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import AppHeader from "@/components/app-header";
 
 type Profile = { username: string; displayName: string; city: string };
 
-export default function ProfileClient({ userId, email, initialProfile }: { userId: string; email: string; initialProfile: Profile }) {
+export default function ProfileClient({ userId, email, initialProfile,stats }: { userId: string; email: string; initialProfile: Profile;stats:{completed:number;listings:number;marked:number} }) {
   const router = useRouter();
   const supabase = useMemo(() => createClient(), []);
   const [profile, setProfile] = useState(initialProfile);
@@ -41,7 +41,7 @@ export default function ProfileClient({ userId, email, initialProfile }: { userI
   return <div className="min-h-screen pb-24 md:pb-12">
     <AppHeader active="profile"/>
     <main className="mx-auto max-w-4xl px-4 py-8 md:px-8 md:py-12">
-      <div className="mb-7"><p className="mb-2 text-xs font-bold uppercase tracking-[.18em] text-[#527060]">Tu cuenta</p><h1 className="text-4xl font-black tracking-[-.05em] md:text-5xl">Mi perfil</h1><p className="mt-3 text-[#607066]">La información básica que verán otros coleccionistas.</p></div>
+      <section className="mb-7 overflow-hidden rounded-[2rem] bg-[#17231b] p-6 text-white md:p-8"><div className="flex flex-col gap-6 sm:flex-row sm:items-center"><div className="grid h-24 w-24 shrink-0 place-items-center rounded-[2rem] bg-[#c9f31d] text-3xl font-black text-[#17231b] shadow-[0_12px_30px_rgba(201,243,29,.2)]">{(profile.displayName||profile.username||"CN").slice(0,2).toUpperCase()}</div><div className="min-w-0 flex-1"><p className="text-xs font-black uppercase tracking-[.18em] text-[#c9f31d]">Perfil de coleccionista</p><h1 className="mt-2 truncate text-4xl font-black tracking-[-.05em]">{profile.displayName||"Mi perfil"}</h1><p className="mt-2 text-white/60">{profile.username?`@${profile.username}`:"Añade un nombre de usuario"}{profile.city?` · ${profile.city}`:""}</p><div className="mt-4 flex flex-wrap gap-2"><span className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-bold"><ShieldCheck size={14}/>Correo verificado</span>{profile.username&&profile.city&&<span className="flex items-center gap-1 rounded-full bg-[#c9f31d] px-3 py-1 text-xs font-bold text-[#17231b]"><Sparkles size={14}/>Perfil completo</span>}</div></div></div><div className="mt-6 grid grid-cols-3 gap-2"><ProfileStat value={stats.marked} label="Cromos marcados"/><ProfileStat value={stats.completed} label="Intercambios"/><ProfileStat value={stats.listings} label="Anuncios activos"/></div></section>
       <div className="grid gap-5 md:grid-cols-[1fr_280px]">
         <form onSubmit={save} className="surface rounded-3xl p-5 md:p-7">
           <div className="mb-5 grid h-16 w-16 place-items-center rounded-full bg-[#e6f1db] text-[#164f35]"><UserRound size={30}/></div>
@@ -59,3 +59,4 @@ export default function ProfileClient({ userId, email, initialProfile }: { userI
     </main>
   </div>;
 }
+function ProfileStat({value,label}:{value:number;label:string}){return <div className="rounded-2xl bg-white/10 p-3 text-center"><strong className="block text-2xl font-black text-[#c9f31d]">{value}</strong><span className="mt-1 block text-[10px] font-bold uppercase tracking-wider text-white/55">{label}</span></div>}

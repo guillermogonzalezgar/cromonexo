@@ -6,7 +6,7 @@ import MarketClient from "./market-client";
 import { sortByChecklist } from "@/lib/sticker-order";
 
 export const dynamic = "force-dynamic";
-type Sticker = { id: string; number: string; name: string | null; team: string; collection_id?: string };
+type Sticker = { id: string; number: string; name: string | null; team: string; category?:string|null; collection_id?: string };
 
 export default async function MarketPage({ searchParams }: { searchParams: Promise<{ coleccion?: string }> }) {
   const { coleccion } = await searchParams;
@@ -20,13 +20,14 @@ export default async function MarketPage({ searchParams }: { searchParams: Promi
   if (!collection) throw new Error("No hay ninguna colección disponible.");
 
   const [{ data: listingRows }, { data: catalog }] = await Promise.all([
-    supabase.from("market_listings").select("id,seller_id,price_cents,status,created_at,verification_id,seller:profiles(display_name,username,city),sticker:stickers(id,number,name,team,collection_id)").eq("status", "active").order("created_at", { ascending: false }),
-    supabase.from("stickers").select("id,number,name,team").eq("collection_id", collection.id),
+    supabase.from("market_listings").select("id,seller_id,price_cents,status,created_at,verification_id,seller:profiles(display_name,username,city),sticker:stickers(id,number,name,team,category,collection_id),verification:listing_verifications(front_path)").eq("status", "active").order("created_at", { ascending: false }),
+    supabase.from("stickers").select("id,number,name,team,category").eq("collection_id", collection.id),
   ]);
-  const listings = (listingRows ?? []).filter(listing => {
+  const filteredListings = (listingRows ?? []).filter(listing => {
     const sticker = Array.isArray(listing.sticker) ? listing.sticker[0] : listing.sticker;
     return sticker?.collection_id === collection.id;
   });
+  const listings=await Promise.all(filteredListings.map(async listing=>{const verification=Array.isArray(listing.verification)?listing.verification[0]:listing.verification;let photo_url:string|null=null;if(verification?.front_path){const{data}=await supabase.storage.from("sticker-verifications").createSignedUrl(verification.front_path,3600);photo_url=data?.signedUrl??null}return{...listing,photo_url}}));
   const availableStickers = sortByChecklist((catalog ?? []) as Sticker[]);
 
   return <div className="min-h-screen pb-24 md:pb-12"><AppHeader active="market"/><main className="mx-auto max-w-6xl px-4 py-9 md:px-8 md:py-14">

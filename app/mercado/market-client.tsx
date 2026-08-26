@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Camera, Clock3, Flag, Plus, ShieldCheck, ShoppingBag, Store } from "lucide-react";
+import { Camera, Clock3, Flag, Plus, Search, ShieldCheck, ShoppingBag, Store } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
-type S = { id:string; number:string; name:string|null; team:string };
+type S = { id:string; number:string; name:string|null; team:string;category?:string|null };
 type Seller = { display_name:string|null; username:string|null; city:string|null };
 type Relation<T> = T|T[]|null;
-type L = { id:string; seller_id:string; price_cents:number; verification_id?:string|null; seller:Relation<Seller>; sticker:Relation<S> };
+type L = { id:string; seller_id:string; price_cents:number; verification_id?:string|null; photo_url?:string|null; seller:Relation<Seller>; sticker:Relation<S> };
 type VerificationRow = { verification_id:string; verification_code:string; expires_at:string };
 type Verification = { id:string; code:string; expiresAt:string };
 type PhotoKind = "front"|"back"|"proof";
@@ -26,6 +26,13 @@ export default function MarketClient({ userId, listings, availableStickers }:{ u
   const [verification,setVerification] = useState<Verification|null>(null);
   const [photos,setPhotos] = useState<Partial<Record<PhotoKind,File>>>({});
   const [loading,setLoading] = useState(false);
+  const [query,setQuery]=useState("");
+  const [team,setTeam]=useState("all");
+  const [category,setCategory]=useState("all");
+  const [maxPrice,setMaxPrice]=useState("");
+  const teams=useMemo(()=>[...new Set(listings.map(listing=>one(listing.sticker)?.team).filter(Boolean) as string[])].sort((a,b)=>a.localeCompare(b,"es")),[listings]);
+  const categories=useMemo(()=>[...new Set(listings.map(listing=>one(listing.sticker)?.category).filter(Boolean) as string[])].sort((a,b)=>a.localeCompare(b,"es")),[listings]);
+  const visibleListings=useMemo(()=>listings.filter(listing=>{const item=one(listing.sticker);const text=`${item?.number??""} ${item?.name??""} ${item?.team??""}`.toLowerCase(),limit=Number(maxPrice.replace(",","."));return text.includes(query.toLowerCase())&&(team==="all"||item?.team===team)&&(category==="all"||item?.category===category)&&(!maxPrice||(!Number.isNaN(limit)&&listing.price_cents<=limit*100))}),[listings,query,team,category,maxPrice]);
 
   const resetVerification = () => { setVerification(null); setPhotos({}); setMessage(""); };
   const startVerification = async () => {
@@ -93,8 +100,9 @@ export default function MarketClient({ userId, listings, availableStickers }:{ u
       </>}
     </section>}
     {message&&<p role="status" className="mb-5 rounded-xl bg-white p-3 text-sm font-bold">{message}</p>}
-    <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{listings.map(l=>{const s=one(l.sticker),seller=one(l.seller);return <article key={l.id} className="rounded-2xl border border-[#173d2a]/15 bg-white p-5"><div className="flex items-start justify-between"><div className="grid h-12 w-12 place-items-center rounded-xl bg-[#e6f1db] font-black text-[#164f35]">#{s?.number}</div>{l.verification_id&&<span className="flex items-center gap-1 rounded-full bg-[#e6f1db] px-2.5 py-1 text-[10px] font-black uppercase text-[#164f35]"><ShieldCheck size={13}/>Fotos aportadas</span>}</div><h2 className="mt-4 font-black">{s?.name??s?.team}</h2><p className="text-xs text-[#718078]">{s?.team}</p><p className="mt-4 text-2xl font-black">{(l.price_cents/100).toFixed(2).replace(".",",")} €</p><p className="mt-1 text-xs text-[#718078]">{seller?.display_name||seller?.username||"Coleccionista"}{seller?.city?` · ${seller.city}`:""}</p>{l.seller_id===userId?<span className="mt-4 block rounded-xl bg-[#f0eee7] p-3 text-center text-sm font-bold">Tu anuncio</span>:<><button onClick={()=>request(l.id)} className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#164f35] p-3 text-sm font-bold text-white"><ShoppingBag size={17}/>Solicitar compra</button><ReportButton listingId={l.id} onMessage={setMessage}/></>}</article>})}</section>
-    {!listings.length&&<div className="rounded-2xl border border-dashed p-12 text-center"><Store className="mx-auto"/><h2 className="mt-3 font-black">Todavía no hay anuncios</h2></div>}
+    <div className="mb-5 grid gap-3 md:grid-cols-[1fr_13rem_12rem_9rem]"><label className="flex items-center gap-2 rounded-xl border border-[#173d2a]/15 bg-white px-4"><Search size={18} className="text-[#718078]"/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Buscar número, jugador o equipo" className="w-full bg-transparent py-3 outline-none"/></label><select value={team} onChange={e=>setTeam(e.target.value)} className="rounded-xl border border-[#173d2a]/15 bg-white px-4 py-3 font-bold"><option value="all">Todos los equipos</option>{teams.map(value=><option key={value}>{value}</option>)}</select><select value={category} onChange={e=>setCategory(e.target.value)} className="rounded-xl border border-[#173d2a]/15 bg-white px-4 py-3 font-bold"><option value="all">Todas las categorías</option>{categories.map(value=><option key={value}>{value}</option>)}</select><label className="flex items-center rounded-xl border border-[#173d2a]/15 bg-white px-3"><input value={maxPrice} onChange={e=>setMaxPrice(e.target.value)} inputMode="decimal" placeholder="Máx. €" className="w-full bg-transparent py-3 outline-none"/></label></div>
+    <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{visibleListings.map(l=>{const s=one(l.sticker),seller=one(l.seller);return <article key={l.id} className="group overflow-hidden rounded-3xl border border-[#173d2a]/15 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">{l.photo_url?<div className="aspect-[4/3] bg-cover bg-center transition duration-500 group-hover:scale-[1.02]" style={{backgroundImage:`url(${l.photo_url})`}}/>:<div className="grid aspect-[4/3] place-items-center bg-[linear-gradient(145deg,#e5efd9,#fff)]"><div className="grid h-20 w-16 place-items-center rounded-xl border-4 border-white bg-[#164f35] font-mono text-xl font-black text-[#c9f31d] shadow-xl">#{s?.number}</div></div>}<div className="p-5"><div className="flex items-start justify-between gap-2"><div><h2 className="font-black">{s?.name??s?.team}</h2><p className="text-xs text-[#718078]">{s?.team}</p></div>{l.verification_id&&<span className="flex shrink-0 items-center gap-1 rounded-full bg-[#e6f1db] px-2.5 py-1 text-[9px] font-black uppercase text-[#164f35]"><ShieldCheck size={12}/>Verificado</span>}</div><p className="mt-4 text-3xl font-black">{(l.price_cents/100).toFixed(2).replace(".",",")} €</p><p className="mt-1 text-xs text-[#718078]">{seller?.display_name||seller?.username||"Coleccionista"}{seller?.city?` · ${seller.city}`:""}</p>{l.seller_id===userId?<span className="mt-4 block rounded-xl bg-[#f0eee7] p-3 text-center text-sm font-bold">Tu anuncio</span>:<><button onClick={()=>request(l.id)} className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#164f35] p-3 text-sm font-bold text-white"><ShoppingBag size={17}/>Solicitar compra</button><ReportButton listingId={l.id} onMessage={setMessage}/></>}</div></article>})}</section>
+    {!visibleListings.length&&<div className="rounded-3xl border border-dashed border-[#173d2a]/20 bg-white/50 p-12 text-center"><Store className="mx-auto text-[#789083]" size={38}/><h2 className="mt-4 text-xl font-black">{listings.length?"No encontramos cromos con esos filtros":"Todavía no hay anuncios"}</h2><p className="mx-auto mt-2 max-w-sm text-sm text-[#65756b]">{listings.length?"Prueba con otro jugador, número o equipo.":"Sé la primera persona en publicar un cromo en esta colección."}</p>{!listings.length&&<button onClick={()=>setOpen(true)} className="mt-5 rounded-xl bg-[#164f35] px-5 py-3 font-bold text-white">Publicar el primero</button>}</div>}
   </>;
 }
 
