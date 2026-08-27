@@ -24,7 +24,7 @@ export async function POST(request:Request){
       accountId=account.id;
       const{error}=await supabase.rpc("save_payment_account",{p_stripe_account_id:accountId});if(error)throw error;
     }
-    const account=await stripeV2Request<Account>(`/core/accounts/${accountId}?include%5B%5D=configuration.recipient&include%5B%5D=requirements`,undefined,"GET");
+    const account=await stripeV2Request<Account>(`/core/accounts/${accountId}?include%5B0%5D=configuration.recipient&include%5B1%5D=requirements`,undefined,"GET");
     const ready=accountReady(account);
     await supabase.rpc("update_payment_account_status",{p_charges:ready,p_payouts:ready,p_complete:ready});
     if(ready){
