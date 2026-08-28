@@ -5,5 +5,12 @@ export async function updateSession(request: NextRequest) {
   if (!url || !key) return response;
   const supabase = createServerClient(url, key, { cookies: { getAll: () => request.cookies.getAll(), setAll: (items) => {
     items.forEach(({ name, value }) => request.cookies.set(name, value)); response = NextResponse.next({ request }); items.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
-  } } }); await supabase.auth.getUser(); return response;
+  } } });
+  // Netlify ejecuta este código en Edge. Si Supabase tarda, no dejamos que
+  // la renovación de sesión agote el tiempo máximo de toda la navegación.
+  await Promise.race([
+    supabase.auth.getUser().catch(()=>null),
+    new Promise<null>(resolve=>setTimeout(()=>resolve(null),4000)),
+  ]);
+  return response;
 }
