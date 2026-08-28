@@ -1,6 +1,6 @@
 import {NextResponse} from "next/server";
 import {createClient} from "@/lib/supabase/server";
-import {stripeRequest,stripeV2Request} from "@/lib/stripe";
+import {stripeLiveMode,stripeRequest,stripeV2Request} from "@/lib/stripe";
 
 type Account={id:string;configuration?:{recipient?:{capabilities?:{stripe_balance?:{stripe_transfers?:{status?:string}}}}}};
 const accountReady=(account:Account)=>account.configuration?.recipient?.capabilities?.stripe_balance?.stripe_transfers?.status==="active";
@@ -9,7 +9,8 @@ export async function POST(request:Request){
   try{
     const supabase=await createClient();const{data:{user}}=await supabase.auth.getUser();
     if(!user)return NextResponse.json({error:"Inicia sesión para configurar los cobros."},{status:401});
-    const{data:saved}=await supabase.from("payment_accounts").select("stripe_account_id").eq("user_id",user.id).maybeSingle();
+    const livemode=stripeLiveMode();
+    const{data:saved}=await supabase.from("payment_accounts").select("stripe_account_id").eq("user_id",user.id).eq("livemode",livemode).maybeSingle();
     let accountId=saved?.stripe_account_id;
     if(!accountId){
       const account=await stripeV2Request<Account>("/core/accounts",{
@@ -22,11 +23,11 @@ export async function POST(request:Request){
         include:["configuration.recipient","identity","requirements"],
       });
       accountId=account.id;
-      const{error}=await supabase.rpc("save_payment_account",{p_stripe_account_id:accountId});if(error)throw error;
+      const{error}=await supabase.rpc("save_payment_account",{p_stripe_account_id:accountId,p_livemode:livemode});if(error)throw error;
     }
     const account=await stripeV2Request<Account>(`/core/accounts/${accountId}?include%5B0%5D=configuration.recipient&include%5B1%5D=requirements`,undefined,"GET");
     const ready=accountReady(account);
-    await supabase.rpc("update_payment_account_status",{p_charges:ready,p_payouts:ready,p_complete:ready});
+    await supabase.rpc("update_payment_account_status",{p_charges:ready,p_payouts:ready,p_complete:ready,p_livemode:livemode});
     if(ready){
       const link=await stripeRequest<{url:string}>(`/accounts/${accountId}/login_links`,new URLSearchParams());
       return NextResponse.json({url:link.url});

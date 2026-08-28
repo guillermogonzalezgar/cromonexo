@@ -1,6 +1,6 @@
 import {NextResponse} from "next/server";
 import {createClient} from "@/lib/supabase/server";
-import {platformFee,stripeRequest} from "@/lib/stripe";
+import {platformFee,stripeLiveMode,stripeRequest} from "@/lib/stripe";
 
 type Relation<T>=T|T[]|null;const one=<T,>(v:Relation<T>)=>Array.isArray(v)?v[0]??null:v;
 export async function POST(request:Request){
@@ -11,7 +11,7 @@ export async function POST(request:Request){
     const{data:purchase,error}=await supabase.from("market_requests").select("id,buyer_id,status,listing:market_listings(id,seller_id,price_cents,sticker:stickers(number,name,team))").eq("id",body.requestId).single();
     if(error||!purchase||purchase.buyer_id!==user.id||purchase.status!=="accepted")throw new Error("La solicitud todavía no está aceptada.");
     const listing=one(purchase.listing);if(!listing)throw new Error("El anuncio ya no está disponible.");
-    const{data:payment}=await supabase.from("payment_accounts").select("stripe_account_id,charges_enabled,payouts_enabled").eq("user_id",listing.seller_id).maybeSingle();
+    const{data:payment}=await supabase.from("payment_accounts").select("stripe_account_id,charges_enabled,payouts_enabled").eq("user_id",listing.seller_id).eq("livemode",stripeLiveMode()).maybeSingle();
     if(!payment?.charges_enabled||!payment.payouts_enabled)throw new Error("El vendedor todavía debe terminar la configuración de cobros.");
     const sticker=one(listing.sticker),shipping=body.delivery==="shipping"?399:0,fee=platformFee(listing.price_cents),origin=new URL(request.url).origin;
     const params=new URLSearchParams({mode:"payment",success_url:`${origin}/mercado/solicitudes?checkout=success&session_id={CHECKOUT_SESSION_ID}`,cancel_url:`${origin}/mercado/solicitudes?checkout=cancelled`,customer_email:user.email||"","line_items[0][price_data][currency]":"eur","line_items[0][price_data][product_data][name]":`${sticker?.name||sticker?.team||"Cromo"} · #${sticker?.number||""}`,"line_items[0][price_data][unit_amount]":String(listing.price_cents),"line_items[0][quantity]":"1","payment_intent_data[application_fee_amount]":String(fee),"payment_intent_data[transfer_data][destination]":payment.stripe_account_id,"metadata[market_request_id]":purchase.id,"metadata[delivery_method]":body.delivery});
