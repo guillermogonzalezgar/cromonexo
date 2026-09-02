@@ -3,6 +3,7 @@ import {createClient} from "@/lib/supabase/server";
 import {stripeLiveMode,stripeRequest,stripeV2Request} from "@/lib/stripe";
 
 type Account={id:string;configuration?:{recipient?:{capabilities?:{stripe_balance?:{stripe_transfers?:{status?:string}}}}}};
+type PlatformAccount={id:string;charges_enabled:boolean;payouts_enabled:boolean;details_submitted:boolean;country?:string};
 const accountReady=(account:Account)=>account.configuration?.recipient?.capabilities?.stripe_balance?.stripe_transfers?.status==="active";
 
 export async function POST(request:Request){
@@ -10,6 +11,14 @@ export async function POST(request:Request){
     const supabase=await createClient();const{data:{user}}=await supabase.auth.getUser();
     if(!user)return NextResponse.json({error:"Inicia sesión para configurar los cobros."},{status:401});
     const livemode=stripeLiveMode();
+    const platform=await stripeRequest<PlatformAccount>("/account",undefined,"GET");
+    if(livemode&&(!platform.details_submitted||!platform.charges_enabled)){
+      return NextResponse.json({
+        error:`La clave activa de Netlify pertenece a ${platform.id}, pero Stripe todavía considera incompleta esa cuenta. Comprueba en Stripe que estás dentro de esa misma cuenta y termina “Verifica tu empresa” y la configuración de Connect.`,
+        code:"stripe_platform_not_active",
+        platformAccountId:platform.id,
+      },{status:409});
+    }
     const{data:saved}=await supabase.from("payment_accounts").select("stripe_account_id").eq("user_id",user.id).eq("livemode",livemode).maybeSingle();
     let accountId=saved?.stripe_account_id;
     if(!accountId){
@@ -38,5 +47,11 @@ export async function POST(request:Request){
       use_case:{type:"account_onboarding",account_onboarding:{configurations:["recipient"],refresh_url:`${origin}/mercado/solicitudes?stripe=refresh`,return_url:`${origin}/mercado/solicitudes?stripe=return`,collection_options:{fields:"eventually_due",future_requirements:"include"}}},
     });
     return NextResponse.json({url:link.url});
-  }catch(error){return NextResponse.json({error:error instanceof Error?error.message:"No se pudo abrir Stripe."},{status:400})}
+  }catch(error){
+    const message=error instanceof Error?error.message:"No se pudo abrir Stripe.";
+    if(message.includes("must be activated")){
+      return NextResponse.json({error:"Stripe Payments está activo, pero Stripe Connect aún no permite crear vendedores en esta cuenta. En el Dashboard abre Connect → Resumen y completa la activación de la plataforma. Comprueba también que la clave sk_live_ de Netlify pertenece a la misma cuenta activa."},{status:409});
+    }
+    return NextResponse.json({error:message},{status:400});
+  }
 }
