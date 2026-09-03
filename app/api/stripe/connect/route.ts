@@ -7,11 +7,13 @@ type PlatformAccount={id:string;charges_enabled:boolean;payouts_enabled:boolean;
 const accountReady=(account:Account)=>account.configuration?.recipient?.capabilities?.stripe_balance?.stripe_transfers?.status==="active";
 
 export async function POST(request:Request){
+  let platform:PlatformAccount|undefined;
+  let livemode=false;
   try{
     const supabase=await createClient();const{data:{user}}=await supabase.auth.getUser();
     if(!user)return NextResponse.json({error:"Inicia sesión para configurar los cobros."},{status:401});
-    const livemode=stripeLiveMode();
-    const platform=await stripeRequest<PlatformAccount>("/account",undefined,"GET");
+    livemode=stripeLiveMode();
+    platform=await stripeRequest<PlatformAccount>("/account",undefined,"GET");
     if(livemode&&(!platform.details_submitted||!platform.charges_enabled)){
       return NextResponse.json({
         error:`La clave activa de Netlify pertenece a ${platform.id}, pero Stripe todavía considera incompleta esa cuenta. Comprueba en Stripe que estás dentro de esa misma cuenta y termina “Verifica tu empresa” y la configuración de Connect.`,
@@ -50,7 +52,15 @@ export async function POST(request:Request){
   }catch(error){
     const message=error instanceof Error?error.message:"No se pudo abrir Stripe.";
     if(message.includes("must be activated")){
-      return NextResponse.json({error:"Stripe Payments está activo, pero Stripe Connect aún no permite crear vendedores en esta cuenta. En el Dashboard abre Connect → Resumen y completa la activación de la plataforma. Comprueba también que la clave sk_live_ de Netlify pertenece a la misma cuenta activa."},{status:409});
+      const account=platform?.id||"desconocida";
+      const mode=livemode?"REAL":"PRUEBA";
+      return NextResponse.json({
+        error:`Stripe ha rechazado la creación del vendedor. La web está usando la cuenta ${account} en modo ${mode}. Comprueba que ese ID coincide con la cuenta activa del Dashboard. Si coincide, contacta con soporte de Stripe para que habiliten la creación de cuentas Connect en modo real.`,
+        code:"stripe_connect_not_activated",
+        platformAccountId:platform?.id,
+        livemode,
+        platformStatus:platform?{chargesEnabled:platform.charges_enabled,payoutsEnabled:platform.payouts_enabled,detailsSubmitted:platform.details_submitted}:undefined,
+      },{status:409});
     }
     return NextResponse.json({error:message},{status:400});
   }
