@@ -20,18 +20,14 @@ export default async function MarketPage({ searchParams }: { searchParams: Promi
   if (!collection) throw new Error("No hay ninguna colección disponible.");
 
   const [{ data: listingRows }, { data: catalog }] = await Promise.all([
-    supabase.from("market_listings").select("id,seller_id,price_cents,status,created_at,verification_id,seller:profiles(display_name,username,city),sticker:stickers(id,number,name,team,category,collection_id),verification:listing_verifications(front_path)").eq("status", "active").order("created_at", { ascending: false }),
+    supabase.from("market_listings").select("id,seller_id,price_cents,status,created_at,verification_id,seller:profiles(display_name,username,city),sticker:stickers(id,number,name,team,category,collection_id,collection:collections(name,slug)),verification:listing_verifications(front_path)").eq("status", "active").order("created_at", { ascending: false }),
     supabase.from("stickers").select("id,number,name,team,category").eq("collection_id", collection.id),
   ]);
-  const filteredListings = (listingRows ?? []).filter(listing => {
-    const sticker = Array.isArray(listing.sticker) ? listing.sticker[0] : listing.sticker;
-    return sticker?.collection_id === collection.id;
-  });
-  const listings=await Promise.all(filteredListings.map(async listing=>{const verification=Array.isArray(listing.verification)?listing.verification[0]:listing.verification;let photo_url:string|null=null;if(verification?.front_path){const{data}=await supabase.storage.from("sticker-verifications").createSignedUrl(verification.front_path,3600);photo_url=data?.signedUrl??null}return{...listing,photo_url}}));
+  const listings=await Promise.all((listingRows??[]).map(async listing=>{const verification=Array.isArray(listing.verification)?listing.verification[0]:listing.verification;let photo_url:string|null=null;if(verification?.front_path){const{data}=await supabase.storage.from("sticker-verifications").createSignedUrl(verification.front_path,3600);photo_url=data?.signedUrl??null}return{...listing,photo_url}}));
   const availableStickers = sortByChecklist((catalog ?? []) as Sticker[]);
 
   return <div className="min-h-screen pb-24 md:pb-12"><AppHeader active="market"/><main className="mx-auto max-w-6xl px-4 py-9 md:px-8 md:py-14">
-    <div className="grid gap-6 md:grid-cols-[1fr_20rem] md:items-end"><div className="max-w-2xl"><span className="inline-flex rounded-full bg-[#e5efd9] px-3 py-1 text-xs font-black uppercase tracking-[.16em] text-[#287051]">Comunidad CromoNexo</span><h1 className="mt-4 text-4xl font-black tracking-[-.055em] md:text-6xl">El cromo que buscas,<br/><span className="text-[#287051]">más cerca.</span></h1><p className="mt-4 text-[#65756b] md:text-lg">Publica cualquier cromo que tengas para vender y conecta directamente con otros coleccionistas. Sin comisiones ni intermediarios por ahora.</p></div><CollectionSelector collections={(collections ?? []).map(({slug,name})=>({slug,name}))} value={collection.slug}/></div>
+    <div className="grid gap-6 md:grid-cols-[1fr_20rem] md:items-end"><div className="max-w-2xl"><span className="inline-flex rounded-full bg-[#e5efd9] px-3 py-1 text-xs font-black uppercase tracking-[.16em] text-[#287051]">Comunidad CromoNexo</span><h1 className="mt-4 text-4xl font-black tracking-[-.055em] md:text-6xl">Todo el mercado,<br/><span className="text-[#287051]">en un solo lugar.</span></h1><p className="mt-4 text-[#65756b] md:text-lg">Consulta todos los cromos que están a la venta ahora mismo. Elige una colección en el selector para publicar uno nuevo.</p></div><CollectionSelector collections={(collections ?? []).map(({slug,name})=>({slug,name}))} value={collection.slug}/></div>
     <MarketClient userId={user.id} listings={listings} availableStickers={availableStickers}/>
   </main></div>;
 }
