@@ -1,5 +1,5 @@
 -- Aplica la tarifa de envío según el precio del cromo y permite confirmar cartas sin seguimiento.
-create or replace function public.create_market_order(p_request_id uuid,p_delivery_method text,p_checkout_session_id text)
+create or replace function public.create_market_order_v2(p_request_id uuid,p_delivery_method text,p_checkout_session_id text)
 returns uuid language plpgsql security definer set search_path='' as $$
 declare target public.market_requests%rowtype; listing public.market_listings%rowtype; order_id uuid; shipping integer; fee integer;
 begin
@@ -19,6 +19,9 @@ begin
   if order_id is null then raise exception 'order already processed'; end if;
   return order_id;
 end $$;
+
+revoke all on function public.create_market_order_v2(uuid,text,text) from public,anon;
+grant execute on function public.create_market_order_v2(uuid,text,text) to authenticated;
 
 create or replace function public.ship_market_order(p_order_id uuid,p_carrier text,p_tracking_code text)
 returns void language plpgsql security definer set search_path='' as $$
