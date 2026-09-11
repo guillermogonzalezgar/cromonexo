@@ -5,7 +5,7 @@ import AppHeader from "@/components/app-header";
 const topics = [
   { icon: Sticker, title: "Organizar mi colección", text: "Marca únicamente los cromos que te faltan o tienes repetidos. También puedes añadir varios números de una vez." },
   { icon: Repeat2, title: "Cómo funcionan los matches", text: "Existe un match cuando ambos tenéis al menos un cromo que el otro busca. Las coincidencias aparecen ordenadas por compatibilidad." },
-  { icon: ShoppingBag, title: "Mercado", text: "Puedes publicar cromos y recibir solicitudes. CromoNexo no procesa pagos, cobros ni envíos; el acuerdo se realiza entre usuarios." },
+  { icon: ShoppingBag, title: "Mercado", text: "Ya puedes publicar cromos. Desde el 1 de octubre, los pagos se realizarán siempre dentro de CromoNexo, con carta, seguimiento o entrega en mano según la operación." },
   { icon: ShieldCheck, title: "Intercambios seguros", text: "No compartas contraseñas ni códigos. Comprueba el estado de los cromos y acuerda claramente la entrega con la otra persona." },
 ];
 
