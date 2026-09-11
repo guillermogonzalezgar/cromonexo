@@ -2,9 +2,15 @@ import {NextResponse} from "next/server";
 import {createClient} from "@/lib/supabase/server";
 import {stripeLiveMode,stripeRequest,stripeV2Request} from "@/lib/stripe";
 
-type Account={id:string;configuration?:{recipient?:{capabilities?:{stripe_balance?:{stripe_transfers?:{status?:string}}}}}};
+type Capability={status?:string};
+type Account={id:string;configuration?:{
+  merchant?:{capabilities?:{card_payments?:Capability}};
+  recipient?:{capabilities?:{stripe_balance?:{stripe_transfers?:Capability}}};
+}};
 type PlatformAccount={id:string;charges_enabled:boolean;payouts_enabled:boolean;details_submitted:boolean;country?:string};
-const accountReady=(account:Account)=>account.configuration?.recipient?.capabilities?.stripe_balance?.stripe_transfers?.status==="active";
+const accountReady=(account:Account)=>
+  account.configuration?.merchant?.capabilities?.card_payments?.status==="active"&&
+  account.configuration?.recipient?.capabilities?.stripe_balance?.stripe_transfers?.status==="active";
 
 export async function POST(request:Request){
   let platform:PlatformAccount|undefined;
@@ -30,13 +36,16 @@ export async function POST(request:Request){
         dashboard:"express",
         identity:{country:"es"},
         defaults:{currency:"eur",locales:["es-ES"],responsibilities:{fees_collector:"application",losses_collector:"application"}},
-        configuration:{recipient:{capabilities:{stripe_balance:{stripe_transfers:{requested:true}}}}},
-        include:["configuration.recipient","identity","requirements"],
+        configuration:{
+          merchant:{capabilities:{card_payments:{requested:true}}},
+          recipient:{capabilities:{stripe_balance:{stripe_transfers:{requested:true}}}},
+        },
+        include:["configuration.merchant","configuration.recipient","identity","requirements"],
       });
       accountId=account.id;
       const{error}=await supabase.rpc("save_payment_account",{p_stripe_account_id:accountId,p_livemode:livemode});if(error)throw error;
     }
-    const account=await stripeV2Request<Account>(`/core/accounts/${accountId}?include%5B0%5D=configuration.recipient&include%5B1%5D=requirements`,undefined,"GET");
+    const account=await stripeV2Request<Account>(`/core/accounts/${accountId}?include%5B0%5D=configuration.merchant&include%5B1%5D=configuration.recipient&include%5B2%5D=requirements`,undefined,"GET");
     const ready=accountReady(account);
     await supabase.rpc("update_payment_account_status",{p_charges:ready,p_payouts:ready,p_complete:ready,p_livemode:livemode});
     if(ready){
@@ -46,7 +55,7 @@ export async function POST(request:Request){
     const origin=new URL(request.url).origin;
     const link=await stripeV2Request<{url:string}>("/core/account_links",{
       account:accountId,
-      use_case:{type:"account_onboarding",account_onboarding:{configurations:["recipient"],refresh_url:`${origin}/mercado/solicitudes?stripe=refresh`,return_url:`${origin}/mercado/solicitudes?stripe=return`,collection_options:{fields:"eventually_due",future_requirements:"include"}}},
+      use_case:{type:"account_onboarding",account_onboarding:{configurations:["merchant","recipient"],refresh_url:`${origin}/mercado/solicitudes?stripe=refresh`,return_url:`${origin}/mercado/solicitudes?stripe=return`,collection_options:{fields:"eventually_due",future_requirements:"include"}}},
     });
     return NextResponse.json({url:link.url});
   }catch(error){
