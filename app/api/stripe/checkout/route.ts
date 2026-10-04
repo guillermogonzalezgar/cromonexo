@@ -1,7 +1,7 @@
 import {NextResponse} from "next/server";
 import {createClient} from "@/lib/supabase/server";
-import {platformFee,stripeLiveMode,stripeRequest} from "@/lib/stripe";
-import {marketPaymentsAvailable,shippingCentsFor,shippingLabelFor} from "@/lib/market-policy";
+import {stripeLiveMode,stripeRequest} from "@/lib/stripe";
+import {marketPaymentsAvailable,checkoutAllocation,shippingLabelFor} from "@/lib/market-policy";
 
 type Relation<T>=T|T[]|null;const one=<T,>(v:Relation<T>)=>Array.isArray(v)?v[0]??null:v;
 export async function POST(request:Request){
@@ -15,11 +15,12 @@ export async function POST(request:Request){
     const listing=one(purchase.listing);if(!listing)throw new Error("El anuncio ya no está disponible.");
     const{data:payment}=await supabase.from("payment_accounts").select("stripe_account_id,charges_enabled,payouts_enabled").eq("user_id",listing.seller_id).eq("livemode",stripeLiveMode()).maybeSingle();
     if(!payment?.charges_enabled||!payment.payouts_enabled)throw new Error("El vendedor todavía debe terminar la configuración de cobros.");
-    const sticker=one(listing.sticker),shipping=body.delivery==="shipping"?shippingCentsFor(listing.price_cents):0,fee=platformFee(listing.price_cents),origin=new URL(request.url).origin;
-    const params=new URLSearchParams({mode:"payment",success_url:`${origin}/mercado/solicitudes?checkout=success&session_id={CHECKOUT_SESSION_ID}`,cancel_url:`${origin}/mercado/solicitudes?checkout=cancelled`,customer_email:user.email||"","line_items[0][price_data][currency]":"eur","line_items[0][price_data][product_data][name]":`${sticker?.name||sticker?.team||"Cromo"} · #${sticker?.number||""}`,"line_items[0][price_data][unit_amount]":String(listing.price_cents),"line_items[0][quantity]":"1","payment_intent_data[application_fee_amount]":String(fee),"payment_intent_data[transfer_data][destination]":payment.stripe_account_id,"metadata[market_request_id]":purchase.id,"metadata[delivery_method]":body.delivery});
+    const sticker=one(listing.sticker),allocation=checkoutAllocation(listing.price_cents,body.delivery),shipping=allocation.shippingCents,fee=allocation.applicationFeeCents,origin=new URL(request.url).origin;
+    const params=new URLSearchParams({mode:"payment",success_url:`${origin}/mercado/solicitudes?checkout=success&session_id={CHECKOUT_SESSION_ID}`,cancel_url:`${origin}/mercado/solicitudes?checkout=cancelled`,customer_email:user.email||"","line_items[0][price_data][currency]":"eur","line_items[0][price_data][product_data][name]":`${sticker?.name||sticker?.team||"Cromo"} · #${sticker?.number||""}`,"line_items[0][price_data][unit_amount]":String(listing.price_cents),"line_items[0][quantity]":"1","payment_intent_data[application_fee_amount]":String(fee),"payment_intent_data[transfer_data][destination]":payment.stripe_account_id,"metadata[market_request_id]":purchase.id,"metadata[delivery_method]":body.delivery,"metadata[shipping_management]":allocation.managed?"cromonexo_manual":"seller","metadata[commission_cents]":String(allocation.commissionCents),"metadata[retained_shipping_cents]":String(allocation.retainedShippingCents)});
+    if(allocation.managed)params.set("phone_number_collection[enabled]","true");
     if(shipping){params.set("line_items[1][price_data][currency]","eur");params.set("line_items[1][price_data][product_data][name]",shippingLabelFor(listing.price_cents));params.set("line_items[1][price_data][unit_amount]",String(shipping));params.set("line_items[1][quantity]","1");params.set("shipping_address_collection[allowed_countries][0]","ES");}
     const session=await stripeRequest<{id:string;url:string}>("/checkout/sessions",params);
-    const{error:orderError}=await supabase.rpc("create_market_order_v2",{p_request_id:purchase.id,p_delivery_method:body.delivery,p_checkout_session_id:session.id});
+    const{error:orderError}=await supabase.rpc("create_market_order_v3",{p_request_id:purchase.id,p_delivery_method:body.delivery,p_checkout_session_id:session.id,p_livemode:stripeLiveMode()});
     if(orderError){await stripeRequest(`/checkout/sessions/${session.id}/expire`,new URLSearchParams()).catch(()=>null);throw orderError;}
     return NextResponse.json({url:session.url});
   }catch(error){return NextResponse.json({error:error instanceof Error?error.message:"No se pudo iniciar el pago."},{status:400})}

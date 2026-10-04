@@ -26,5 +26,5 @@ export async function stripeV2Request<T>(path:string,body?:unknown,method:"GET"|
   return data as T;
 }
 
-export const platformFee=(itemCents:number)=>Math.max(10,Math.round(itemCents*.05));
+export {platformFee} from "@/lib/market-policy";
 export const stripeLiveMode=()=>process.env.STRIPE_SECRET_KEY?.startsWith("sk_live_")??false;

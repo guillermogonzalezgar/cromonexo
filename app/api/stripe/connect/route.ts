@@ -55,7 +55,7 @@ export async function POST(request:Request){
     const origin=new URL(request.url).origin;
     const link=await stripeV2Request<{url:string}>("/core/account_links",{
       account:accountId,
-      use_case:{type:"account_onboarding",account_onboarding:{configurations:["merchant","recipient"],refresh_url:`${origin}/mercado/solicitudes?stripe=refresh`,return_url:`${origin}/mercado/solicitudes?stripe=return`,collection_options:{fields:"eventually_due",future_requirements:"include"}}},
+      use_case:{type:"account_onboarding",account_onboarding:{configurations:["merchant","recipient"],refresh_url:`${origin}/mercado/solicitudes?stripe=refresh`,return_url:`${origin}/mercado/solicitudes?stripe=return`,collection_options:{fields:"currently_due",future_requirements:"omit"}}},
     });
     return NextResponse.json({url:link.url});
   }catch(error){

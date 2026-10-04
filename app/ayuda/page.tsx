@@ -5,7 +5,7 @@ import AppHeader from "@/components/app-header";
 const topics = [
   { icon: Sticker, title: "Organizar mi colección", text: "Marca únicamente los cromos que te faltan o tienes repetidos. También puedes añadir varios números de una vez." },
   { icon: Repeat2, title: "Cómo funcionan los matches", text: "Existe un match cuando ambos tenéis al menos un cromo que el otro busca. Las coincidencias aparecen ordenadas por compatibilidad." },
-  { icon: ShoppingBag, title: "Mercado", text: "Ya puedes publicar cromos. Desde el 1 de octubre, los pagos se realizarán siempre dentro de CromoNexo, con carta, seguimiento o entrega en mano según la operación." },
+  { icon: ShoppingBag, title: "Mercado", text: "Todas las compras se pagan dentro de CromoNexo. La comisión es el 5 % del precio del cromo, con un mínimo de 0,10 € por compra, redondeada a céntimos y descontada al vendedor. La entrega en mano es gratuita y no requiere confirmar envío ni recepción. Para carta con sello, el vendedor pulsa «Carta enviada» después de enviarla. Para cromos de más de 5 €, CromoNexo gestiona Correos con seguimiento por 3,99 €: el vendedor completa sus datos, descarga la etiqueta y confirma la entrega del paquete en Correos." },
   { icon: ShieldCheck, title: "Intercambios seguros", text: "No compartas contraseñas ni códigos. Comprueba el estado de los cromos y acuerda claramente la entrega con la otra persona." },
 ];
 
